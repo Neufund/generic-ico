@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^6.9.0",
     "gettext-parser": "^1.2.2",
     "husky": "^0.13.3",
+    "i18n-extract": "^0.4.2",
     "ignore-styles": "^5.0.1",
     "istanbul": "next",
     "jsdom": "^10.1.0",
@@ -62,6 +63,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "test": "babel-node node_modules/.bin/babel-istanbul cover _mocha --delay -- --require node_modules/ignore-styles",
     "test:watch": "yarn run test -- --watch --reporter min",
+    "translate": "babel-node ./translations/update.js",
     "build": "babel-node node_modules/.bin/webpack",
     "serve": "babel-node node_modules/.bin/webpack-dev-server --https --colors --progress --history-api-fallback",
     "precommit": "yarn test && yarn lint"

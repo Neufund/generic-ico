@@ -9,6 +9,7 @@
     "transform-runtime",
     "transform-class-properties",
     "transform-export-extensions",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "react-hot-loader/babel"
   ]
 }

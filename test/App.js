@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import MockProviders from './helpers/MockProviders';
-import App from '../src/App';
+import App from '../src/components/App';
 
 describe('App', () => {
   const appComponent = <MockProviders><App /></MockProviders>;

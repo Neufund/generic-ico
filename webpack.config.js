@@ -21,6 +21,7 @@ export default {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
   },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
