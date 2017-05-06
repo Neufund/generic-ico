@@ -1,0 +1,23 @@
+/* Set all sizing to border-box */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* Set things to inherit */
+a, button {
+	color: inherit;
+	background-color: transparent;
+	text-transform: inherit;
+	text-decoration: none;
+	text-shadow: inherit;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	padding: 0;
+}
+button {
+	text-align: center;
+}
