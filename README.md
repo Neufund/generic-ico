@@ -1,8 +1,8 @@
-# node-starter-kit
+# dapp-starter-kit
 
-[![Build Status](https://travis-ci.org/Recmo/node-starter-kit.svg)](https://travis-ci.org/Recmo/node-starter-kit)  [![codecov](https://codecov.io/gh/Recmo/node-starter-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/Recmo/node-starter-kit) [![Join the chat at https://gitter.im/Recmo/node-starter-kit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Recmo/node-starter-kit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/Neufund/dapp-starter-kit.svg)](https://travis-ci.org/Neufund/dapp-starter-kit)  [![codecov](https://codecov.io/gh/Neufund/dapp-starter-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/Neufund/dapp-starter-kit) [![Join the chat at https://gitter.im/Neufund/dapp-starter-kit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Neufund/dapp-starter-kit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Starter kit for Node + React + Redux applications.
+Starter kit for Node + React + Redux + Web3 applications.
 
 
 ## Getting started
