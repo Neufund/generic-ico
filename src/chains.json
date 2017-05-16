@@ -1,0 +1,78 @@
+{
+  "0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3": {
+    "label": "Frontier",
+    "announcement": "https://blog.ethereum.org/2015/07/27/final-steps/",
+    "forked": 200000,
+    "forks": {
+      "0x13ced9eaa49a522d4e7dcf80a739a57dbf08f4ce5efc4edbac86a66d8010f693": {
+        "label": "Ice Age",
+        "announcement": "https://blog.ethereum.org/2015/08/04/ethereum-protocol-update-1",
+        "forked": 1150000,
+        "forks": {
+          "0x584bdb5d4e74fe97f5a5222b533fe1322fd0b6ad3eb03f02c3221984e2c0b430": {
+            "label": "Homestead",
+            "forked": 1920000,
+            "forks": {
+              "0x4985f5ca3d2afbec36529aa96f74de3cc10a2a4a6c44f2157a57d2c6059a11bb": {
+                "label": "DAO",
+                "forked": 2463000,
+                "forks": {
+                  "0x2086799aeebeae135c246c65021c82b4e15a2c451340993aacfd2751886514f0": {
+                    "label": "Tangerine Whistle",
+                    "forked": 2675000,
+                    "forks": {
+                      "0x58eff9265aedf8a54da8121de1324e1e0d9aac99f694d16c6a41afffe3817d73": {
+                        "label": "Spurious Dragon",
+                        "number": "3717296",
+                        "hash": "0x06b957c00d16fb42ba4c69bc4abaf0eaec794b60b7fcb2c7b6144fd032703764"
+                      }
+                    }
+                  }
+                }
+              },
+              "0x94365e3a8c0b35089c1d1195081fe7489b528a84b22199c916180db8b28ade7f": {
+                "label": "Classic",
+                "forked": 2500000,
+                "announcement": "https://ethereumclassic.github.io/blog/2016-10-17-hard-fork/",
+                "forks": {
+                  "0xca12c63534f565899681965528d536c52cb05b7c48e269c2a6cb77ad864d878a":{
+                    "label": "GasReprice",
+                    "forked": 3000000,
+                    "announcement": "https://ethereumclassic.github.io/blog/2016-12-29-newsletter/",
+                    "forks": {
+                      "0x20a2817ab5545ae3c7aed17e534cffc813040b15e4e095c1eb687b85ff5e5305": {
+                        "label": "Die Hard",
+                        "number": 3736570,
+                        "hash": "0x488503a3dec0fb86473648b8858f954e476e6edd516c29bbc9c5b07bfa60af63"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "0xa3c565fc15c7478862d50ccd6561e3c06b24cc509bf388941c25ea985ce32cb9": {
+    "label": "Kovan",
+    "number": 1501812,
+    "hash": "0x3f08fce4d8e17b858fc82e0b89bd25d2bcadbcb45ad34ac024c5bac4d9ee1212"
+  },
+  "0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d": {
+    "label": "Ropsten",
+    "number": 942166,
+    "hash": "0xe4189a92b000267f218abf45a6a5c57e4ffdab7fe41710cde1bfcf59cd5821fc"
+  },
+  "0xf8db90a3c81d9f86022cca1e12b4e05770aeae784d56cc5a31e78f6aea44698a": {
+    "label": "Infuranet",
+    "number": 7176,
+    "hash": "0x0381efd718f56f01594dd32e9e641a635353728052f3c13819eb538f2df2f4aa"
+  },
+  "0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177": {
+    "label": "Rinkeby",
+    "number": 196372,
+    "hash": "0x57e6c2037f4bb163d92dd1e38a26be77e011c04b28eb248d2ff3a32a564cecc3"
+  }
+}

@@ -10,6 +10,11 @@ export default {
     // respond to 404s with index.html
     hot: true,
     // enable HMR on the server
+    proxy: {
+      '/web3/*': {
+        target: 'http://localhost:8545',
+      },
+    },
   },
   entry: [
     'react-hot-loader/patch',

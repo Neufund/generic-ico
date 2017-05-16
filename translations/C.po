@@ -6,3 +6,93 @@ msgstr ""
 
 msgid "To do"
 msgstr ""
+
+msgid "Ethereum Node"
+msgstr ""
+
+msgid "Wallet Provider"
+msgstr ""
+
+msgid "unavailable"
+msgstr ""
+
+msgid "Name: "
+msgstr ""
+
+msgid "Gas price: "
+msgstr ""
+
+msgid "Gas limit: "
+msgstr ""
+
+msgid "Block time: "
+msgstr ""
+
+msgid "Block number: "
+msgstr ""
+
+msgid "Block hash: "
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Listening: "
+msgstr ""
+
+msgid "Peer count: "
+msgstr ""
+
+msgid "Synchronizing: "
+msgstr ""
+
+msgid "Mining: "
+msgstr ""
+
+msgid "Hashrate: "
+msgstr ""
+
+msgid " Hz"
+msgstr ""
+
+msgid "Coinbase: "
+msgstr ""
+
+msgid "Web3: "
+msgstr ""
+
+msgid "Node: "
+msgstr ""
+
+msgid "network: "
+msgstr ""
+
+msgid "Ethereum: "
+msgstr ""
+
+msgid "Whisper: "
+msgstr ""
+
+msgid "Compilers: "
+msgstr ""
+
+msgid "Wallet unavailable"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Balance"
+msgstr ""
+
+msgid "Transactions"
+msgstr ""
+
+msgid "Gas Price: "
+msgstr ""
+
+msgid "Gas Limit: "
+msgstr ""

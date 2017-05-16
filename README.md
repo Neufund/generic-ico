@@ -33,10 +33,11 @@ Open the project folder in Atom. Then in a terminal, download all the dependenci
 yarn
 ```
 
-Now open three terminals:
+Now open four terminals:
 
-A: `yarn serve`
-B: `yarn test-watch`
-C: (use for issuing random commands like `git`)
+A: `yarn testrpc`
+B: `yarn serve`
+C: `yarn test-watch`
+D: (use for issuing random commands like `git`)
 
 Open Chrome and go to [https://localhost:8080/](https://localhost:8080/).
