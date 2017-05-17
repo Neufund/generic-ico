@@ -1,0 +1,289 @@
+[
+  {
+    "type": "@@redux-router-kit/ROUTE_TO_NEXT",
+    "payload": {
+      "href": "/",
+      "state": null,
+      "isHistoryChange": true,
+      "event": {}
+    },
+    "meta": {
+      "url": "/",
+      "location": {
+        "protocol": "https:",
+        "host": "localhost:8080",
+        "hostname": "localhost",
+        "port": "8080",
+        "pathname": "/",
+        "hash": "",
+        "search": "",
+        "origin": "https://localhost:8080",
+        "href": "https://localhost:8080/"
+      },
+      "assign": {
+        "params": {},
+        "query": {}
+      },
+      "_routeId": 1,
+      "routeKey": [
+        "/"
+      ]
+    }
+  },
+  {
+    "type": "@@redux-router-kit/ROUTE_TO",
+    "payload": {
+      "href": "/",
+      "state": null,
+      "isHistoryChange": true,
+      "event": {}
+    },
+    "meta": {
+      "url": "/",
+      "location": {
+        "protocol": "https:",
+        "host": "localhost:8080",
+        "hostname": "localhost",
+        "port": "8080",
+        "pathname": "/",
+        "hash": "",
+        "search": "",
+        "origin": "https://localhost:8080",
+        "href": "https://localhost:8080/"
+      },
+      "assign": {
+        "params": {},
+        "query": {}
+      },
+      "_routeId": 1,
+      "routeKey": [
+        "/"
+      ]
+    }
+  },
+  {
+    "type": "setRpcProvider",
+    "payload": [
+      "/web3"
+    ]
+  },
+  {
+    "type": "newBlock",
+    "payload": [
+      {
+        "gasLimit": 4712388,
+        "blockNumber": 0,
+        "blockHash": "0xa2a43e2f48404f85c4649d1ee222db690c2c9b72a865be6680729e77bf40c2a5",
+        "blockTime": 1495032781
+      }
+    ]
+  },
+  {
+    "type": "setVersion",
+    "payload": [
+      {
+        "web3": "0.19.0",
+        "node": "ProviderEngine/v0.0.0/javascript",
+        "network": "1495032781795",
+        "ethereum": null,
+        "whisper": null,
+        "compilers": [
+          "solidity"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "setNode",
+    "payload": [
+      {
+        "listening": true,
+        "peerCount": 0,
+        "syncing": true,
+        "mining": false,
+        "hashrate": 0,
+        "coinbase": null
+      }
+    ]
+  },
+  {
+    "type": "setChain",
+    "payload": [
+      {
+        "name": "Unknown chain",
+        "gasPrice": "20000000000"
+      }
+    ]
+  },
+  {
+    "type": "setWalletProvider",
+    "payload": [
+      "Node"
+    ]
+  },
+  {
+    "type": "setRpcProvider",
+    "payload": [
+      "window.web3"
+    ]
+  },
+  {
+    "type": "setVersion",
+    "payload": [
+      {
+        "web3": "0.19.0",
+        "node": "ProviderEngine/v0.0.0/javascript",
+        "network": "1495032781795",
+        "ethereum": null,
+        "whisper": null,
+        "compilers": [
+          "solidity"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "setNode",
+    "payload": [
+      {
+        "listening": true,
+        "peerCount": 0,
+        "syncing": true,
+        "mining": false,
+        "hashrate": 0,
+        "coinbase": null
+      }
+    ]
+  },
+  {
+    "type": "setChain",
+    "payload": [
+      {
+        "name": "Unknown chain",
+        "gasPrice": "20000000000"
+      }
+    ]
+  },
+  {
+    "type": "setRpcProvider",
+    "payload": [
+      "/web3"
+    ]
+  },
+  {
+    "type": "newBlock",
+    "payload": [
+      {
+        "gasLimit": 4712388,
+        "blockNumber": 0,
+        "blockHash": "0xa2a43e2f48404f85c4649d1ee222db690c2c9b72a865be6680729e77bf40c2a5",
+        "blockTime": 1495032781
+      }
+    ]
+  },
+  {
+    "type": "setVersion",
+    "payload": [
+      {
+        "web3": "0.19.0",
+        "node": "ProviderEngine/v0.0.0/javascript",
+        "network": "1495032781795",
+        "ethereum": null,
+        "whisper": null,
+        "compilers": [
+          "solidity"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "setNode",
+    "payload": [
+      {
+        "listening": true,
+        "peerCount": 0,
+        "syncing": true,
+        "mining": false,
+        "hashrate": 0,
+        "coinbase": "0x17b1d35685192e1044af5f368213c82e18588c52"
+      }
+    ]
+  },
+  {
+    "type": "setChain",
+    "payload": [
+      {
+        "name": "Unknown chain",
+        "gasPrice": "20000000000"
+      }
+    ]
+  },
+  {
+    "type": "setWallet",
+    "payload": [
+      [
+        {
+          "address": "0x17b1d35685192e1044af5f368213c82e18588c52",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xbcc312911dd2485d6785e114313fca2b8fee9546",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xe0692e7d9cc375379da7b295cd14d5c0c4750baf",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xbe3049356be514ac518ecc96d96a5d699a03f9e3",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0x89fcb58375046995c008e27ac542a0ff8de78621",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xcacd53cf0f74c0b1a685748820930365fadfe9bf",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xf7302417f8dec39c0aa36f26ea762261237547a8",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0x51b4df1735e877ea822f263995b2a3c69eac890a",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0xdabbf2e8eb9afc2220b06c2316b86219663436b9",
+          "balance": "100000000000000000000",
+          "count": 0
+        },
+        {
+          "address": "0x8890b9b64d658ef5cbb26a74ec21facd2f469f7a",
+          "balance": "100000000000000000000",
+          "count": 0
+        }
+      ]
+    ]
+  },
+  {
+    "type": "newBlock",
+    "payload": [
+      {
+        "gasLimit": 4712388,
+        "blockNumber": 0,
+        "blockHash": "0xa2a43e2f48404f85c4649d1ee222db690c2c9b72a865be6680729e77bf40c2a5",
+        "blockTime": 1495032781
+      }
+    ]
+  }
+]

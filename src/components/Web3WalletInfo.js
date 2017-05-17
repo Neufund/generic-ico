@@ -39,8 +39,7 @@ Web3WalletInfoComponent.propTypes = {
 };
 
 Web3WalletInfoComponent.defaultProps = {
-  web3: null,
-  wallet: [{}],
+  wallet: [{ address: null, balance: null, transactions: null }],
 };
 
 export default connect(state => ({

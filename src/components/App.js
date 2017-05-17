@@ -40,9 +40,6 @@ AppComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
 };
 
-export default connect(
-  state => ({
-    i18n: getTranslator(state),
-  }),
-  () => ({})
-)(AppComponent);
+export default connect(state => ({
+  i18n: getTranslator(state),
+}))(AppComponent);

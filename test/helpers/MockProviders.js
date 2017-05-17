@@ -11,8 +11,11 @@ const wrapReducer = next => (...args) => deepFreeze(next(...args));
 
 // Create the Redux store
 export const store = createStore(wrapReducer(reducer));
+export const { getState } = store;
+export const dispatch = actions =>
+  Array.isArray(actions) ? actions.forEach(action => store.dispatch(action)) : dispatch([actions]);
 
-const MockProviders = ({ children }) => (
+export const MockProviders = ({ children }) => (
   <MuiThemeProvider>
     <Provider store={store}>
       {children}

@@ -34,6 +34,7 @@
     "ignore-styles": "^5.0.1",
     "istanbul": "next",
     "jsdom": "^10.1.0",
+    "jsdom-global": "^3.0.2",
     "json-loader": "^0.5.4",
     "mocha": "^3.3.0",
     "react-addons-test-utils": "^15.5.1",

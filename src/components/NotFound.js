@@ -18,9 +18,6 @@ NotFoundComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
 };
 
-export default connect(
-  state => ({
-    i18n: getTranslator(state),
-  }),
-  () => ({})
-)(NotFoundComponent);
+export default connect(state => ({
+  i18n: getTranslator(state),
+}))(NotFoundComponent);
