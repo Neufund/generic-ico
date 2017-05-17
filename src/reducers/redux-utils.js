@@ -1,11 +1,4 @@
-const objectMap = (obj, map) =>
-  Object.keys(obj).reduce(
-    (others, key) => ({
-      ...others,
-      [key]: map(obj[key], key),
-    }),
-    {}
-  );
+import { objectMap } from '../utils';
 
 export const makeCreators = reducers =>
   objectMap(reducers, (_, type) => (...payload) => ({ type, payload }));

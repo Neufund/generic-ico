@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+import './helpers/mockDom';
 import { expect } from 'chai';
 import reducer from '../src/reducers';
 

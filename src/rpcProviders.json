@@ -1,0 +1,28 @@
+[
+  { "url": "window.web3", "label": "Builtin" },
+  { "url": "/web3", "label": "Testrpc" },
+  { "url": "http://localhost:8545", "label": "Local node" },
+
+  { "url": "?1", "label": "Neufund" },
+  { "url": "https://neufund.org/nodes/ropsten", "label": "Neufund (Ropsten)" },
+
+  { "url": "https://mainnet.infura.io/c1GeHOZ7ipPvjO7nDP7l", "label": "Nefund Infura" },
+  { "url": "https://ropsten.infura.io/c1GeHOZ7ipPvjO7nDP7l", "label": "Nefund Infura (Ropsten)" },
+  { "url": "https://kovan.infura.io/c1GeHOZ7ipPvjO7nDP7l", "label": "Nefund Infura (Kovan)" },
+  { "url": "https://infuranet.infura.io/c1GeHOZ7ipPvjO7nDP7l", "label": "Nefund Infura (Infuranet)" },
+  { "url": "https://rinkeby.infura.io/c1GeHOZ7ipPvjO7nDP7l", "label": "Nefund Infura (Rinkeby)" },
+
+  { "url": "https://mainnet.infura.io/", "label": "Infura" },
+  { "url": "https://ropsten.infura.io/", "label": "Infura (Ropsten)" },
+  { "url": "https://kovan.infura.io/", "label": "Infura (Kovan)" },
+  { "url": "https://infuranet.infura.io/", "label": "Infura (Infuranet)" },
+  { "url": "https://rinkeby.infura.io/", "label": "Infura (Rinkeby)" },
+
+  { "url": "https://api.myetherapi.com/eth", "label": "MyEtherWallet" },
+  { "url": "https://api.myetherapi.com/rop", "label": "MyEtherWallet (Ropsten)" },
+
+  { "url": "https://eth3.augur.net", "label": "Augur" },
+
+  { "url": "https://rpc.metamask.io", "label": "Metamask" },
+  { "url": "https://testrpc.metamask.io", "label": "Metamask (Ropsten)" }
+]
