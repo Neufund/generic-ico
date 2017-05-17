@@ -9,8 +9,8 @@ import initialChains from '../chains.json';
 // TODO: Fetch providers and chain configuration from updateable IPFS resource
 
 const initialState = {
-  rpcProvider: '/web3',
-  walletProvider: 'Node',
+  rpcProvider: null,
+  walletProvider: null,
   version: {
     web3: null,
     node: null,

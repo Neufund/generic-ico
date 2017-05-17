@@ -37,7 +37,7 @@ export const RpcProviderSelectorComponent = ({
 
 RpcProviderSelectorComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
-  rpcProvider: PropTypes.string.isRequired,
+  rpcProvider: PropTypes.string,
   rpcProviders: PropTypes.arrayOf(
     PropTypes.shape({
       url: PropTypes.string.isRequired,
@@ -45,6 +45,10 @@ RpcProviderSelectorComponent.propTypes = {
     })
   ).isRequired,
   changeRpcProvider: PropTypes.func.isRequired,
+};
+
+RpcProviderSelectorComponent.defaultProps = {
+  rpcProvider: null,
 };
 
 export default connect(

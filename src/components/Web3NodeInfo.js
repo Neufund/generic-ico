@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTranslator } from '../reducers/translation';
+import Address from './Address';
 
 const Web3NodeInfoComponent = ({
   i18n,
@@ -40,7 +41,7 @@ const Web3NodeInfoComponent = ({
         </tr>
         <tr>
           <th>{i18n('Coinbase: ')}</th>
-          <td>{coinbase || i18n('unavailable')}</td>
+          <td>{coinbase ? <Address address={coinbase} /> : i18n('unavailable')}</td>
         </tr>
       </tbody>
     </table>

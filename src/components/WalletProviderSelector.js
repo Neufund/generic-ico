@@ -26,13 +26,17 @@ export const WalletProviderSelectorComponent = ({
 
 WalletProviderSelectorComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
-  walletProvider: PropTypes.string.isRequired,
+  walletProvider: PropTypes.string,
   walletProviders: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
     })
   ).isRequired,
   changeWalletProvider: PropTypes.func.isRequired,
+};
+
+WalletProviderSelectorComponent.defaultProps = {
+  walletProvider: null,
 };
 
 export default connect(

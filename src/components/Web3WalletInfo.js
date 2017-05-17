@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTranslator } from '../reducers/translation';
+import Address from './Address';
+import EtherAmount from './EtherAmount';
 
 const Web3WalletInfoComponent = ({ i18n, wallet }) =>
   wallet == null
@@ -17,8 +19,8 @@ const Web3WalletInfoComponent = ({ i18n, wallet }) =>
       <tbody>
         {wallet.map(({ address, balance, transactions }) => (
           <tr key={address}>
-            <td>{address || i18n('unavailable')}</td>
-            <td>{balance || i18n('unavailable')}</td>
+            <td>{<Address address={address} /> || i18n('unavailable')}</td>
+            <td>{<EtherAmount wei={balance} /> || i18n('unavailable')}</td>
             <td>{transactions === null ? i18n('unavailable') : transactions}</td>
           </tr>
           ))}

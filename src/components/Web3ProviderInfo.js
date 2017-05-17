@@ -31,7 +31,7 @@ const Web3ProviderInfoComponent = ({ i18n, web3, node, network, ethereum, whispe
         <td>
           {compilers === null
             ? i18n('unavailable')
-            : compilers.map(compiler => <span>{compiler}</span>)}
+            : compilers.map(compiler => <span key={compiler}>{compiler}</span>)}
         </td>
       </tr>
     </tbody>
