@@ -1,5 +1,7 @@
 import BN from 'bn';
 
+export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 export const objectMap = (obj, map) =>
   Object.keys(obj).reduce(
     (others, key) => ({
@@ -8,6 +10,18 @@ export const objectMap = (obj, map) =>
     }),
     {}
   );
+
+export const objectZip = (keys, values) =>
+  keys.reduce(
+    (others, key, index) => ({
+      ...others,
+      [key]: values[index],
+    }),
+    {}
+  );
+
+export const objectPromise = async obj =>
+  objectZip(Object.keys(obj), await Promise.all(Object.values(obj)));
 
 export const toPromise = func => (...args) =>
   new Promise((resolve, reject) =>

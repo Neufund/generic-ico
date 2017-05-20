@@ -23,5 +23,12 @@ button {
 }
 
 body {
-  background-color: #FFFF00;
+  max-width: 800px;
+  margin: auto;
+}
+
+p {
+  max-width: 35em;
+  line-height: 1.6;
+  hyphens: auto;
 }

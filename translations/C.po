@@ -7,13 +7,28 @@ msgstr ""
 msgid "To do"
 msgstr ""
 
+msgid "Settings"
+msgstr ""
+
 msgid "Ethereum Node"
 msgstr ""
 
-msgid "Wallet Provider"
+msgid "From"
 msgstr ""
 
-msgid "unavailable"
+msgid "To"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Confirmations"
+msgstr ""
+
+msgid "Wallet Provider"
 msgstr ""
 
 msgid "Name: "
@@ -32,6 +47,9 @@ msgid "Block number: "
 msgstr ""
 
 msgid "Block hash: "
+msgstr ""
+
+msgid "unavailable"
 msgstr ""
 
 msgid "yes"

@@ -31,7 +31,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new CopyWebpackPlugin([{ from: './public/index.html', to: 'index.html' }]),
+    new CopyWebpackPlugin([{ from: './public' }]),
   ],
   node: {
     __filename: true,

@@ -2,7 +2,7 @@
 import { createSelector } from 'reselect';
 import { makeCreators, makeReducer } from './redux-utils';
 import { createWeb3 } from '../web3';
-import { toPromise, fallback, bytesToHex, bytesToNumber } from '../utils';
+import { objectMap, objectPromise, toPromise, fallback, bytesToHex, bytesToNumber } from '../utils';
 import initialRpcProviders from '../rpcProviders.json';
 import initialChains from '../chains.json';
 
@@ -10,7 +10,7 @@ import initialChains from '../chains.json';
 
 const initialState = {
   rpcProvider: null,
-  walletProvider: null,
+  walletProvider: 'Node',
   version: {
     web3: null,
     node: null,
@@ -29,6 +29,7 @@ const initialState = {
   },
   chain: {
     name: null,
+    confirmations: 10,
     gasPrice: null,
     gasLimit: null,
     blockNumber: null,
@@ -90,6 +91,27 @@ export default reducer;
 
 // Selectors
 
+const synchronousRequests = {
+  version: ['node', 'network', 'ethereum', 'whisper'],
+  eth: [
+    'coinbase',
+    'mining',
+    'hashrate',
+    'syncing',
+    'gasPrice',
+    'accounts',
+    'blockNumber',
+    'protocolVersion',
+  ],
+  net: ['listening', 'peerCount'],
+};
+
+const propFilter = (obj, filter) =>
+  Object.keys(obj).reduce(
+    (others, key) => (filter(key) ? { ...others, [key]: obj[key] } : others),
+    {}
+  );
+
 let currentWeb3 = null;
 export const getWeb3 = createSelector(
   [state => state.web3.rpcProvider, state => state.web3.walletProvider],
@@ -98,12 +120,25 @@ export const getWeb3 = createSelector(
     if (currentWeb3 && currentWeb3.currentProvider && currentWeb3.currentProvider.stop) {
       currentWeb3.currentProvider.stop();
     }
+
+    // Create a new web3 instance
     const newWeb3 = createWeb3(rpcProvider, walletProvider);
+
+    // Remove synchronous requests alltogether
+    objectMap(synchronousRequests, (filter, key) => {
+      newWeb3[key] = propFilter(newWeb3[key], k => !filter.includes(k));
+    });
+
+    // Store new instance in various places
     currentWeb3 = newWeb3;
     window.web3 = currentWeb3;
     return currentWeb3;
   }
 );
+
+export const getBlockNumber = state => state.web3.chain.blockNumber;
+
+export const getEth = createSelector([getWeb3], web3 => objectMap(web3.eth, toPromise));
 
 // Custom action creators
 
@@ -120,37 +155,56 @@ export const newRawBlock = block =>
   });
 
 export const fetchVersionInfo = () => async (dispatch, getState) => {
-  const web3 = getWeb3(getState());
+  const state = getState();
+  const web3 = getWeb3(state);
+  const eth = getEth(state);
+  const version = objectMap(web3.version, toPromise);
   await dispatch(
-    setVersion({
-      web3: web3.version.api,
-      node: await fallback(toPromise(web3.version.getNode)()),
-      network: await fallback(toPromise(web3.version.getNetwork)()),
-      ethereum: await fallback(toPromise(web3.version.getEthereum)()),
-      whisper: await fallback(toPromise(web3.version.getWhisper)()),
-      compilers: await fallback(toPromise(web3.eth.getCompilers)()),
-    })
+    setVersion(
+      await objectPromise(
+        objectMap(
+          {
+            web3: web3.version.api,
+            node: version.getNode(),
+            network: version.getNetwork(),
+            ethereum: version.getEthereum(),
+            whisper: version.getWhisper(),
+            compilers: eth.getCompilers(),
+          },
+          x => fallback(x)
+        )
+      )
+    )
   );
 };
 
 export const fetchNodeState = () => async (dispatch, getState) => {
-  const web3 = getWeb3(getState());
+  const state = getState();
+  const web3 = getWeb3(state);
+  const eth = getEth(state);
+  const net = objectMap(web3.net, toPromise);
   await dispatch(
-    setNode({
-      listening: await fallback(toPromise(web3.net.getListening)()),
-      peerCount: await fallback(toPromise(web3.net.getPeerCount)()),
-      syncing: await fallback(toPromise(web3.eth.getSyncing)()),
-      mining: await fallback(toPromise(web3.eth.getMining)()),
-      hashrate: await fallback(toPromise(web3.eth.getHashrate)()),
-      coinbase: await fallback(toPromise(web3.eth.getCoinbase)()),
-    })
+    setNode(
+      await objectPromise(
+        objectMap(
+          {
+            listening: net.getListening(),
+            peerCount: net.getPeerCount(),
+            syncing: eth.getSyncing(),
+            mining: eth.getMining(),
+            hashrate: eth.getHashrate(),
+            coinbase: eth.getCoinbase(),
+          },
+          x => fallback(x)
+        )
+      )
+    )
   );
 };
 
 const stringifyNumber = bignum => (bignum === null ? null : bignum.toString());
 
-export const identifyChain = async (chains, web3, fork = 0) => {
-  const blockHash = async number => (await toPromise(web3.eth.getBlock)(number)).hash;
+export const identifyChain = async (chains, blockHash, fork = 0) => {
   const hash = await blockHash(fork);
   if (hash in chains) {
     const chain = chains[hash];
@@ -159,7 +213,7 @@ export const identifyChain = async (chains, web3, fork = 0) => {
       if (next === null) {
         return `Outdated snapshot of ${chain.label}`;
       }
-      return identifyChain(chains[hash].forks, web3, chains[hash].forked);
+      return identifyChain(chains[hash].forks, blockHash, chains[hash].forked);
     }
     const top = await blockHash(chain.number);
     if (top === null) {
@@ -175,25 +229,26 @@ export const identifyChain = async (chains, web3, fork = 0) => {
 
 export const fetchChainState = () => async (dispatch, getState) => {
   const state = getState();
-  const web3 = getWeb3(state);
+  const eth = getEth(state);
   await dispatch(
     setChain({
-      name: await identifyChain(state.web3.chains, web3),
-      gasPrice: stringifyNumber(await fallback(toPromise(web3.eth.getGasPrice)())),
+      name: await identifyChain(state.web3.chains, async n => (await eth.getBlock(n)).hash),
+      gasPrice: stringifyNumber(await fallback(eth.getGasPrice())),
     })
   );
 };
 
 export const fetchWalletState = () => async (dispatch, getState) => {
-  const web3 = getWeb3(getState());
-  const accounts = await fallback(toPromise(web3.eth.getAccounts)());
+  const state = getState();
+  const eth = getEth(state);
+  const accounts = await fallback(eth.getAccounts(), []);
   await dispatch(
     setWallet(
       await Promise.all(
         accounts.map(async address => ({
           address,
-          balance: stringifyNumber(await fallback(toPromise(web3.eth.getBalance)(address))),
-          count: await fallback(toPromise(web3.eth.getTransactionCount)(address)),
+          balance: stringifyNumber(await fallback(eth.getBalance(address))),
+          count: await fallback(eth.getTransactionCount(address)),
         }))
       )
     )

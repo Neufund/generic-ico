@@ -24,7 +24,7 @@ const reducers = {
 
 export const reducer = makeReducer(reducers, initialState);
 export const creators = makeCreators(reducers);
-export const { setLanguage } = creators;
+export const { addTranslations, setLanguage } = creators;
 export default reducer;
 
 export const getTranslation = createSelector(
