@@ -5,6 +5,7 @@ import translation from './translation';
 import network from './network';
 import entities from './entities';
 import web3 from './web3';
+import transactions from './transactions';
 
 export default combineReducers({
   router,
@@ -13,4 +14,5 @@ export default combineReducers({
   network,
   entities,
   web3,
+  transactions,
 });
