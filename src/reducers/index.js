@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'redux-router-kit';
-import { reducer as form } from 'redux-form';
+import form from './form';
 import translation from './translation';
 import network from './network';
 import entities from './entities';
