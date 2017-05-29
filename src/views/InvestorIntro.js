@@ -42,11 +42,11 @@ Investor2.propTypes = {
 const Investor = ({ step, goToLink }) => step === '1' ? <Investor1 goToLink={goToLink} /> : <Investor2 goToLink={goToLink} />;
 
 Investor.defaultProps = {
-  step: 1,
+  step: '1',
 };
 
 Investor.propTypes = {
-  step: PropTypes.number,
+  step: PropTypes.string,
   goToLink: PropTypes.func.isRequired,
 };
 
