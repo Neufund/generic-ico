@@ -5,7 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createRouterMiddleware, RouterHistoryContainer } from 'redux-router-kit';
+import { createRouterMiddleware, RouterHistoryContainer, routeTo } from 'redux-router-kit';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import reduxLogger from 'redux-logger';
@@ -20,10 +20,17 @@ injectTapEventPlugin();
 const root = document.getElementById('react-root');
 
 const render = (store, routes) => {
+  const NotFound = routes['/not-found'];
   ReactDOM.render(
     <MuiThemeProvider>
       <Provider store={store}>
-        <RouterHistoryContainer routes={routes} renderNotFound={routes['/not-found']} />
+        <RouterHistoryContainer
+          routes={routes}
+          renderNotFound={() => {
+            store.dispatch(routeTo('/not-found'));
+            return <NotFound />;
+          }}
+        />
       </Provider>
     </MuiThemeProvider>,
     root
