@@ -20,7 +20,6 @@
     "codecov": "^2.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.1",
-    "deep-freeze": "^0.0.1",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.0",

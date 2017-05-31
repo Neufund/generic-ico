@@ -11,6 +11,7 @@ import thunkMiddleware from 'redux-thunk';
 import reduxLogger from 'redux-logger';
 import reducer from './reducers';
 import appRoutes from './routes';
+import { deepfreeze } from './utils';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -48,8 +49,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   // Deep freeze all reducer state
   // (this prevents accidental state modification)
-  const deepFreeze = require('deep-freeze');
-  const reducerWrap = next => (...args) => deepFreeze(next(...args));
+  const reducerWrap = next => (...args) => deepfreeze(next(...args));
   store.replaceReducer(reducerWrap(reducer));
 
   // Enable Webpack hot module replacement
