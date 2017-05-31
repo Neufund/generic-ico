@@ -3,25 +3,31 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { routeTo } from 'redux-router-kit';
 
-const LinkView = ({ targetTo, text, path }) =>
+const LinkView = ({ targetTo, children, path, tabIndex, ...props }) =>
   (<a
-    tabIndex="0"
+    tabIndex={tabIndex}
     role="link"
+    {...props}
     onClick={(event) => {
       event.preventDefault();
       targetTo(path);
     }}
-  >{text}</a>);
+  >{children}</a>);
 
 LinkView.propTypes = {
   targetTo: PropTypes.func.isRequired,
   path: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  tabIndex: PropTypes.string.isRequired,
+};
+
+LinkView.defaultProps = {
+  tabIndex: '0',
 };
 
 export default connect(
   null,
   dispatch => ({
-    targetTo: id => dispatch(routeTo(id)),
+    targetTo: path => dispatch(routeTo(path)),
   })
 )(LinkView);
