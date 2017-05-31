@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import deepFreeze from 'deep-freeze';
+import { deepfreeze } from '../../src/utils';
 import reducer from '../../src/reducers';
 
 // Always deep-freeze state during tests
-const wrapReducer = next => (...args) => deepFreeze(next(...args));
+const wrapReducer = next => (...args) => deepfreeze(next(...args));
 
 // Create the Redux store
 export const store = createStore(wrapReducer(reducer));

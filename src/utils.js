@@ -2,6 +2,16 @@ import BN from 'bn';
 
 export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+export const deepfreeze = (obj) => {
+  if (obj !== null && typeof obj === 'object') {
+    Object.freeze(obj);
+    Object.getOwnPropertyNames(obj).forEach((prop) => {
+      deepfreeze(obj[prop]);
+    });
+  }
+  return obj;
+};
+
 export const objectMap = (obj, map) =>
   Object.keys(obj).reduce(
     (others, key) => ({
