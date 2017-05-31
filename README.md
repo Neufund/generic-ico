@@ -51,9 +51,9 @@ D: (use for issuing random commands like `git`)
 Open Chrome and go to [https://localhost:8080/](https://localhost:8080/).
 
 ### Using starter kit as starting point for new projects
-You need to create branch that tracks this repository and rebase it on your master. Then when there will be never versions of starter kit (new features, bugfixes etc) you can pull those using starter branch and merge to your project.
+You need to create branch that tracks this repository and rebase it on your master. Then when there will be newer versions of starter kit (new features, bugfixes etc) you can pull those using starter branch and merge to your project.
 
-Lets assume you created ```new_project``` use following commands to setup it:
+Lets assume you created ```new_project``` use the following commands to setup it:
 
     git clone git@github.com:Neufund/new_project.git
     cd new_project
@@ -66,7 +66,7 @@ Lets assume you created ```new_project``` use following commands to setup it:
     git pull -r
     git checkout master
      
-ignore msg "Your branch is based on 'origin/master', but the upstream is gone." - it's beacuse your master is empty thanks to usage of "--allow-empty" parameter
+Ignore the message "Your branch is based on 'origin/master', but the upstream is gone." - it's beacuse your master is empty thanks to usage of "--allow-empty" parameter
 
     git rebase starter
     git push
