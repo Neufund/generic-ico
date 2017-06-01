@@ -18,18 +18,11 @@
   font-size: large;
 }
 
-#submit {
-    background-color: #ccc;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius:6px;
-    color: #fff;
-    font-family: 'Oswald';
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border:none;
-}
+.rectangle-copy {
+  height: 50px;
+  width: 200px;
+  border-radius: 4px;
+  background-c}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
