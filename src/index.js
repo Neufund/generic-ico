@@ -5,12 +5,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createRouterMiddleware, RouterHistoryContainer } from 'redux-router-kit';
+import { createRouterMiddleware, RouterHistoryContainer, routeTo } from 'redux-router-kit';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import reduxLogger from 'redux-logger';
 import reducer from './reducers';
 import appRoutes from './routes';
+import { deepfreeze } from './utils';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -19,10 +20,17 @@ injectTapEventPlugin();
 const root = document.getElementById('react-root');
 
 const render = (store, routes) => {
+  const NotFound = routes['/not-found'];
   ReactDOM.render(
     <MuiThemeProvider>
       <Provider store={store}>
-        <RouterHistoryContainer routes={routes} renderNotFound={routes['/not-found']} />
+        <RouterHistoryContainer
+          routes={routes}
+          renderNotFound={() => {
+            store.dispatch(routeTo('/not-found'));
+            return <NotFound />;
+          }}
+        />
       </Provider>
     </MuiThemeProvider>,
     root
@@ -48,8 +56,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   // Deep freeze all reducer state
   // (this prevents accidental state modification)
-  const deepFreeze = require('deep-freeze');
-  const reducerWrap = next => (...args) => deepFreeze(next(...args));
+  const reducerWrap = next => (...args) => deepfreeze(next(...args));
   store.replaceReducer(reducerWrap(reducer));
 
   // Enable Webpack hot module replacement
