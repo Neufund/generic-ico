@@ -5,8 +5,7 @@ import LoginEmail from './views/LoginEmail';
 import LoginNano from './views/LoginNano';
 import RegisterEmail from './views/RegisterEmail';
 import KYC from './views/KYC';
-
-import NotFound from './components/NotFound';
+import NotFound from './views/NotFound';
 
 // Routes for redux-router-kit
 const routes = {
