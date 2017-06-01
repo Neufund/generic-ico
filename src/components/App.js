@@ -14,10 +14,13 @@ import Web3ChainInfo from './Web3ChainInfo';
 import Web3WalletInfo from './Web3WalletInfo';
 import Transactions from './Transactions';
 import TransferForm from './TransferForm';
+import buttonME from './buttonME';
 
 export const AppComponent = ({ i18n }) => (
   <div>
     <AppBar title={i18n('To do')} iconClassNameRight="muidocs-icon-navigation-expand-more" />
+    <buttonME />
+    <submit type="submit">Click Me!</submit>
     <Toolbar />
     <br /><br />
     <Card>
