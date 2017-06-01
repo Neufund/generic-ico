@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../components/TempLink';
+import Link from '../components/Link';
 
 export default () => (<div>
   <h2>Register e-mail page</h2>

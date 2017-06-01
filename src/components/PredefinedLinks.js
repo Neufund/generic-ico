@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../components/TempLink';
+import Link from '../components/Link';
 
 // TODO: Is it possible to rewrite this without usage of return but keeping propTypes check?
 const LinkCreator = (path) => {
