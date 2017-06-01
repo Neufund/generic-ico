@@ -1,16 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import AppBar from 'material-ui/AppBar';
-import { Toolbar } from 'material-ui/Toolbar';
 import { getTranslator } from '../reducers/translation';
+
+const styleme = {
+  size: '4em',
+  weight: 'bold',
+  fontSize: '4em',
+};
+const table = {
+  height: '50px',
+  width: '800px',
+  background: '#09719B',
+  margin: 'auto 0',
+};
+const text = {
+  height: '19px',
+  width: '108px',
+  color: '#8FA2AB',
+  font: 'Montserrat',
+  size: '15px',
+};
 
 export const NotFoundComponent = ({ i18n }) => (
   <div>
-    <AppBar title={i18n('To do')} iconClassNameRight="muidocs-icon-navigation-expand-more" />
-    <Toolbar />
-    <h1>Not Found</h1>
-    <p>The requested page was not found</p>
+    <table style={table}>
+      <tr>
+        <td style={styleme} />
+        <td > <text style={text}> Cinematron </text> </td>
+      </tr>
+    </table>
+    <h1>{i18n('To do')}</h1>
   </div>
 );
 
