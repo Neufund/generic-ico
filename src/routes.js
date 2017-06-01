@@ -1,7 +1,5 @@
 import Layout from './views/Layout';
 import QuotedStartups from './views/QuotedStartups';
-import StartupIntro from './views/StartupIntro';
-import InvestorIntro from './views/InvestorIntro';
 import Login from './views/Login';
 import LoginEmail from './views/LoginEmail';
 import LoginNano from './views/LoginNano';
@@ -18,8 +16,6 @@ const routes = {
       '.': {
         component: QuotedStartups,
       },
-      '/startupintro': StartupIntro,
-      '/investorintro/:step/': InvestorIntro,
       '/login': Login,
       '/login/email': LoginEmail,
       '/login/nano': LoginNano,
