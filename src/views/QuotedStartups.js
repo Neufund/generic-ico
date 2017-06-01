@@ -41,13 +41,13 @@ export default () => (
 
     <table>
       <thead>
-        <th>
-          <td>Name</td>
-          <td>Total raised</td>
-          <td>ICO Price</td>
-          <td>Tokenized equity</td>
-          <td>Trade</td>
-        </th>
+        <tr>
+          <th>Name</th>
+          <th>Total raised</th>
+          <th>ICO Price</th>
+          <th>Tokenized equity</th>
+          <th>Trade</th>
+        </tr>
       </thead>
       <tbody>
         <tr>

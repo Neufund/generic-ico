@@ -1,12 +1,14 @@
 import React from 'react';
-import Link from '../components/TempLink';
+import { LoginLink } from '../components/PredefinedLinks';
 
 const Header = () => (
   <header>
     <div>Header</div>
     <nav>
       <ul>
-        <li><Link path="/login">Login</Link> <br /></li>
+        <li>
+          <LoginLink>Login</LoginLink>
+        </li>
       </ul>
     </nav>
     <hr />

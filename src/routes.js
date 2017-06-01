@@ -5,6 +5,7 @@ import Login from './views/Login';
 import LoginEmail from './views/LoginEmail';
 import LoginNano from './views/LoginNano';
 import RegisterEmail from './views/RegisterEmail';
+import ConfirmEmail from './views/ConfirmEmail';
 import KYC from './views/KYC';
 import NotFound from './views/NotFound';
 
@@ -39,6 +40,12 @@ const RegisterEmailPage = () => (
   </Layout>
 );
 
+const ConfirmationEmailPage = () => (
+  <Layout>
+    <ConfirmEmail />
+  </Layout>
+);
+
 const KYCPage = () => (
   <Layout>
     <KYC />
@@ -57,7 +64,8 @@ const routes = {
   '/login': LoginPage,
   '/login/email': LoginEmailPage,
   '/login/nano': LoginNanoPage,
-  '/registar/email': RegisterEmailPage,
+  '/register/email': RegisterEmailPage,
+  '/register/email/:confirmationId': ConfirmationEmailPage,
   '/kyc': KYCPage,
   '/not-found': NotFoundPage,
 };
