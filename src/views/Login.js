@@ -1,8 +1,8 @@
 import React from 'react';
-import { LoginEmailLink, LoginNanoLink } from '../components/PredefinedLinks';
+import { LoginNanoLink, KYCLink } from '../components/PredefinedLinks';
 
 export default () => (<div>
   <h2>Login Page</h2>
-  <LoginEmailLink>Login using e-mail</LoginEmailLink> <br />
+  <KYCLink>Successful login when using e-mail</KYCLink> <br />
   <LoginNanoLink>Login using Nano</LoginNanoLink>
 </div>);

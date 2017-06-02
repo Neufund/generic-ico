@@ -12,7 +12,6 @@ const LinkCreator = (path) => {
 };
 
 export const LoginLink = LinkCreator('/login');
-export const LoginEmailLink = LinkCreator('/login/email');
 export const LoginNanoLink = LinkCreator('/login/nano');
 export const RegisterEmailLink = LinkCreator('/register/email');
 export const KYCLink = LinkCreator('/kyc');

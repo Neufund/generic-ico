@@ -2,13 +2,11 @@ import React from 'react';
 import Layout from './views/Layout';
 import QuotedStartups from './views/QuotedStartups';
 import Login from './views/Login';
-import LoginEmail from './views/LoginEmail';
 import LoginNano from './views/LoginNano';
 import RegisterEmail from './views/RegisterEmail';
 import ConfirmEmail from './views/ConfirmEmail';
 import KYC from './views/KYC';
 import NotFound from './views/NotFound';
-
 
 const MainPage = () => (
   <Layout>
@@ -19,12 +17,6 @@ const MainPage = () => (
 const LoginPage = () => (
   <Layout>
     <Login />
-  </Layout>
-);
-
-const LoginEmailPage = () => (
-  <Layout>
-    <LoginEmail />
   </Layout>
 );
 
@@ -62,7 +54,6 @@ const NotFoundPage = () => (
 const routes = {
   '/': MainPage,
   '/login': LoginPage,
-  '/login/email': LoginEmailPage,
   '/login/nano': LoginNanoPage,
   '/register/email': RegisterEmailPage,
   '/register/email/:confirmationId': ConfirmationEmailPage,
