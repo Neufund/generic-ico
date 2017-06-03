@@ -6,6 +6,7 @@ import network from './network';
 import entities from './entities';
 import web3 from './web3';
 import transactions from './transactions';
+import authenticate from './authenticate';
 
 export default combineReducers({
   router,
@@ -15,4 +16,5 @@ export default combineReducers({
   entities,
   web3,
   transactions,
+  authenticate,
 });
