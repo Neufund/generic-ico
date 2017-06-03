@@ -1,6 +1,10 @@
-import { isValidAddress } from 'ethereumjs-util';
+import utils from 'ethereumjs-util';
 
-// Accepts checksummed addresses too
-const EtherAddress = address => isValidAddress(address);
+export const isValidAddressUnchecked = utils.isValidAddress;
 
-export default EtherAddress;
+export const { isValidChecksumAddress, toChecksumAddress } = utils;
+
+const isLowerCase = str => str === str.toLowerCase();
+
+export const isValidAddress = address =>
+  isValidAddressUnchecked(address) && (isLowerCase(address) || isValidChecksumAddress(address));
