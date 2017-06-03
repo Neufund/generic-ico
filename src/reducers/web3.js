@@ -2,7 +2,15 @@
 import { createSelector } from 'reselect';
 import { makeCreators, makeReducer } from './redux-utils';
 import { createWeb3 } from '../web3';
-import { objectMap, objectPromise, toPromise, fallback, bytesToHex, bytesToNumber } from '../utils';
+import {
+  objectMap,
+  objectZip,
+  objectPromise,
+  toPromise,
+  fallback,
+  bytesToHex,
+  bytesToNumber,
+} from '../utils';
 import initialRpcProviders from '../rpcProviders.json';
 import initialChains from '../chains.json';
 
@@ -91,26 +99,27 @@ export default reducer;
 
 // Selectors
 
-const synchronousRequests = {
-  version: ['node', 'network', 'ethereum', 'whisper'],
+const allowedRequests = {
+  version: ['getNode', 'getNetwork', 'getEthereum', 'getWhisper'],
   eth: [
-    'coinbase',
-    'mining',
-    'hashrate',
-    'syncing',
-    'gasPrice',
-    'accounts',
-    'blockNumber',
-    'protocolVersion',
+    'getCoinbase',
+    'getMining',
+    'getHashrate',
+    'getSyncing',
+    'getGasPrice',
+    'getAccounts',
+    'getBlockNumber',
+    'getProtocolVersion',
+    'getCompilers',
+    'getBlock',
+    'getBalance',
+    'getTransactionCount',
+    'sign',
+    'sendRawTransaction',
+    'sendTransaction',
   ],
-  net: ['listening', 'peerCount'],
+  net: ['getListening', 'getPeerCount'],
 };
-
-const propFilter = (obj, filter) =>
-  Object.keys(obj).reduce(
-    (others, key) => (filter(key) ? { ...others, [key]: obj[key] } : others),
-    {}
-  );
 
 let currentWeb3 = null;
 export const getWeb3 = createSelector(
@@ -124,13 +133,13 @@ export const getWeb3 = createSelector(
     // Create a new web3 instance
     const newWeb3 = createWeb3(rpcProvider, walletProvider);
 
-    // Remove synchronous requests alltogether
-    objectMap(synchronousRequests, (filter, key) => {
-      newWeb3[key] = propFilter(newWeb3[key], k => !filter.includes(k));
-    });
+    // Whilelist requests
+    const filteredWeb3 = objectMap(allowedRequests, (keys, first) =>
+      objectZip(keys, keys.map(second => newWeb3[first][second]))
+    );
 
     // Store new instance in various places
-    currentWeb3 = newWeb3;
+    currentWeb3 = filteredWeb3;
     window.currentWeb3 = currentWeb3;
     return currentWeb3;
   }
