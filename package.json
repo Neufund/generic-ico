@@ -49,6 +49,7 @@
     "bn": "^1.0.1",
     "ethereumjs-util": "^5.1.1",
     "isomorphic-fetch": "^2.2.1",
+    "jwt-decode": "^2.2.0",
     "material-ui": "^0.18.0",
     "node-polyglot": "^2.2.2",
     "normalizr": "^3.2.2",
