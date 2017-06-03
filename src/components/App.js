@@ -14,12 +14,15 @@ import Web3ChainInfo from './Web3ChainInfo';
 import Web3WalletInfo from './Web3WalletInfo';
 import Transactions from './Transactions';
 import TransferForm from './TransferForm';
+import Authenticate from './Authenticate';
 
 export const AppComponent = ({ i18n }) => (
   <div>
     <AppBar title={i18n('To do')} iconClassNameRight="muidocs-icon-navigation-expand-more" />
     <Toolbar />
-    <br /><br />
+    <br />
+    <Authenticate />
+    <br />
     <Card>
       <CardText>
         <Subheader>{i18n('Settings')}</Subheader>
