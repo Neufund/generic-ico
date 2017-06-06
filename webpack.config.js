@@ -43,6 +43,15 @@ export default {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
         include: /flexboxgrid/,
       },
+      {
+        test: /\.s?css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' },
+          { loader: 'sass-loader' },
+        ],
+        exclude: /flexboxgrid/,
+      },
       { test: /\.json$/, use: 'json-loader' },
       {
         test: /\.js$/,
