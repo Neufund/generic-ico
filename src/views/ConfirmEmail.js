@@ -5,8 +5,8 @@ import { KYCLink } from '../components/PredefinedLinks';
 
 const ConfirmEmailComponent = ({ confirmationId }) => (<div>
   <h2>Confirmation of e-mail and second factor auth setup page</h2>
-  <div>Got confirmation id: {confirmationId}</div>
-  <KYCLink>Registration succeed go to KYC page</KYCLink> <br />
+  <p>Got confirmation id: {confirmationId}</p>
+  <p><KYCLink>Registration succeed go to KYC page</KYCLink></p>
 </div>);
 
 ConfirmEmailComponent.propTypes = {

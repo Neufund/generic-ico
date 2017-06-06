@@ -3,7 +3,13 @@ import { LoginNanoLink, KYCLink, RegisterLink } from '../components/PredefinedLi
 
 export default () => (<div>
   <h2>Login Page</h2>
-  <KYCLink>Successful login when e-mail was used (next step will be possible KYC)</KYCLink> <br />
-  <RegisterLink>Register account</RegisterLink> <br />
-  <LoginNanoLink>Login using Nano</LoginNanoLink>
+  <p>
+    <KYCLink>Successful login when e-mail was used (next step will be possible KYC)</KYCLink>
+  </p>
+  <p>
+    <RegisterLink>Register account</RegisterLink>
+  </p>
+  <p>
+    <LoginNanoLink>Login using Nano</LoginNanoLink>
+  </p>
 </div>);

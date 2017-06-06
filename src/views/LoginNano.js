@@ -3,5 +3,7 @@ import { KYCLink } from '../components/PredefinedLinks';
 
 export default () => (<div>
   <h2>Login with Nano page</h2>
-  <KYCLink>Login succeed go to KYC page</KYCLink> <br />
+  <p>
+    <KYCLink>Login succeed go to KYC page</KYCLink>
+  </p>
 </div>);
