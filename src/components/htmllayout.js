@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTranslator } from '../reducers/translation';
 
-const styleme = {
+/* const styleme = {
   size: '4em',
   weight: 'bold',
   fontSize: '4em',
@@ -20,7 +20,7 @@ const text = {
   color: '#8FA2AB',
   font: 'Montserrat',
   size: '15px',
-};
+};*/
 
 export const NotFoundComponent = ({ i18n }) => (
   <div className="flex-container">
