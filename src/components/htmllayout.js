@@ -23,14 +23,10 @@ const text = {
 };
 
 export const NotFoundComponent = ({ i18n }) => (
-  <div>
-    <table style={table}>
-      <tr>
-        <td style={styleme} />
-        <td > <text style={text}> Cinematron </text> </td>
-      </tr>
-    </table>
-    <h1>{i18n('To do')}</h1>
+  <div className="flex-container">
+    <div className="flex-item">{i18n('flex item 1')}</div>
+    <div className="flex-item">flex item 2</div>
+    <div className="flex-item">flex item 3</div>
   </div>
 );
 
