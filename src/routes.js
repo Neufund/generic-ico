@@ -3,7 +3,7 @@ import Layout from './views/Layout';
 import QuotedStartups from './views/QuotedStartups';
 import Login from './views/Login';
 import LoginNano from './views/LoginNano';
-import RegisterEmail from './views/RegisterEmail';
+import Register from './views/Register';
 import ConfirmEmail from './views/ConfirmEmail';
 import KYC from './views/KYC';
 import NotFound from './views/NotFound';
@@ -26,9 +26,9 @@ const LoginNanoPage = () => (
   </Layout>
 );
 
-const RegisterEmailPage = () => (
+const RegisterPage = () => (
   <Layout>
-    <RegisterEmail />
+    <Register />
   </Layout>
 );
 
@@ -55,7 +55,7 @@ const routes = {
   '/': MainPage,
   '/login': LoginPage,
   '/login/nano': LoginNanoPage,
-  '/register/email': RegisterEmailPage,
+  '/register': RegisterPage,
   '/register/email/:confirmationId': ConfirmationEmailPage,
   '/kyc': KYCPage,
   '/not-found': NotFoundPage,

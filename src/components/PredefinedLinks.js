@@ -11,7 +11,7 @@ const LinkCreator = (path) => {
   return func;
 };
 
+export const RegisterLink = LinkCreator('/register');
 export const LoginLink = LinkCreator('/login');
 export const LoginNanoLink = LinkCreator('/login/nano');
-export const RegisterEmailLink = LinkCreator('/register/email');
 export const KYCLink = LinkCreator('/kyc');
