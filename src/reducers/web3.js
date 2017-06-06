@@ -131,7 +131,7 @@ export const getWeb3 = createSelector(
 
     // Store new instance in various places
     currentWeb3 = newWeb3;
-    window.web3 = currentWeb3;
+    window.currentWeb3 = currentWeb3;
     return currentWeb3;
   }
 );
