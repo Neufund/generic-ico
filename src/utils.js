@@ -1,3 +1,4 @@
+/* global fetch */
 import BN from 'bn';
 
 export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -46,11 +47,11 @@ export const fallback = async (promise, alternative = null) => {
   }
 };
 
-const hex = n => '0123456789abcdef'[n];
+const hexDigit = n => '0123456789abcdef'[n];
 
 export const bytesToHex = bytes =>
   // eslint-disable-next-line no-bitwise
-  bytes.reduce((total, byte) => total + hex(byte >>> 4) + hex(byte & 0xf), '0x');
+  bytes.reduce((total, byte) => total + hexDigit(byte >>> 4) + hexDigit(byte & 0xf), '0x');
 
 export const bytesToNumber = bytes =>
   // eslint-disable-next-line no-mixed-operators
@@ -58,3 +59,21 @@ export const bytesToNumber = bytes =>
 
 export const bytesToBigNumber = bytes =>
   bytes.reduce((total, byte) => total.mul(256).add(byte), new BN(0));
+
+export const hexToArray = hex =>
+  hex === '' || hex === '0x'
+    ? []
+    : hexToArray(hex.slice(0, -2)).concat([parseInt(hex.slice(-2), 16)]);
+
+export const hexToBytes = hex => new Uint8Array(hexToArray(hex));
+
+export const fetchJson = async (url, request, options = {}) =>
+  (await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(request),
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  })).json();

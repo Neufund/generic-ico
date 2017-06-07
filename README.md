@@ -27,11 +27,11 @@ apm install editorconfig file-icons language-diff language-ini language-markdown
 [atom]: https://atom.io/
 
 #### Webstorm
-Enable editorconfig plugin - [JetBrains manual](https://www.jetbrains.com/help/webstorm/2017.1/configuring-code-style.html#editorconfig)  
-Enable ESLint plugin - [JetBrains manual](https://www.jetbrains.com/help/webstorm/2017.1/eslint.html)  
+Enable editorconfig plugin - [JetBrains manual](https://www.jetbrains.com/help/webstorm/2017.1/configuring-code-style.html#editorconfig)
+Enable ESLint plugin - [JetBrains manual](https://www.jetbrains.com/help/webstorm/2017.1/eslint.html)
 Note that at this time (WebStorm 2017.1.3) you cannot set formatting rules to use one's from ```.eslintrc.json```
 ([issue](https://youtrack.jetbrains.com/issue/WEB-19350)). So you cannot use "Reformat Code" function but you can use plugin
-integration. If you see ESLint error you can hit "alt-enter" and choose "ESLint: fix current file". Another option would be to manually edit IDE's javascript codestyle settings.       
+integration. If you see ESLint error you can hit "alt-enter" and choose "ESLint: fix current file". Another option would be to manually edit IDE's javascript codestyle settings.
 
 ### Getting up and running
 
@@ -41,14 +41,29 @@ Open the project folder in Atom. Then in a terminal, download all the dependenci
 yarn
 ```
 
-Now open four terminals:
+Now open a terminal and start:
 
-A: `yarn testrpc`
-B: `yarn serve`
-C: `yarn test-watch`
-D: (use for issuing random commands like `git`)
+```
+yarn serve
+```
 
 Open Chrome and go to [https://localhost:8080/](https://localhost:8080/).
+
+
+To interact with a mock blockchain, you need to start TestRPC:
+
+```
+yarn testrpc
+```
+
+To authenticate your session, you need [`signatue-authentication-server`](https://hub.docker.com/r/neufund/signature-authentication-server/)
+
+```
+openssl ecparam -genkey -name secp521r1 -noout -out ec512.prv.pem
+openssl ec -in ec512.prv.pem -pubout > ec512.pub.pem
+docker run -ti -v $(pwd)/ec512.prv.pem:/srv/ec512.prv.pem:ro -v $(pwd)/ec512.pub.pem:/srv/ec512.pub.pem:ro -p 5000:5000 neufund/signature-authentication-server:latest
+```
+
 
 ### Using starter kit as starting point for new projects
 You need to create branch that tracks this repository and rebase it on your master. Then when there will be newer versions of starter kit (new features, bugfixes etc) you can pull those using starter branch and merge to your project.
@@ -65,7 +80,7 @@ Lets assume you created ```new_project``` use the following commands to setup it
     git checkout starter
     git pull -r
     git checkout master
-     
+
 Ignore the message "Your branch is based on 'origin/master', but the upstream is gone." - it's beacuse your master is empty thanks to usage of "--allow-empty" parameter
 
     git rebase starter

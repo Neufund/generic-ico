@@ -11,8 +11,13 @@ export default {
     hot: true,
     // enable HMR on the server
     proxy: {
-      '/web3/*': {
+      '/test-rpc/*': {
         target: 'http://localhost:8545',
+        pathRewrite: { '^/test-rpc': '' },
+      },
+      '/signature-authentication-server/*': {
+        target: 'http://localhost:5000',
+        pathRewrite: { '^/signature-authentication-server': '' },
       },
     },
   },
