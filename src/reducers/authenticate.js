@@ -58,7 +58,7 @@ export const doAuthenticate = address => async (dispatch, getState) => {
   const hash = `0x${signHash(Buffer.from(challenge, 'hex')).toString('hex')}`;
 
   // Sign challenge
-  const response = await getEth(getState()).sign(address, hash);
+  const response = (await getEth(getState()).sign(address, hash)).replace('0x', '');
 
   // call /login
   // NOTE: This will trigger user interaction
