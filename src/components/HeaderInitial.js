@@ -6,7 +6,7 @@ import { getTranslator } from '../reducers/translation';
 import { RegisterLink } from '../components/PredefinedLinks';
 import styles from './HeaderInitial.scss';
 
-const HeaderInitial = ({ i18n }) => (
+const HeaderInitialComponent = ({ i18n }) => (
   <header>
     <Grid fluid>
       <Row className={styles.header}>
@@ -30,10 +30,10 @@ const HeaderInitial = ({ i18n }) => (
     </Grid>
   </header>);
 
-HeaderInitial.propTypes = {
+HeaderInitialComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
 };
 
 export default connect(state => ({
   i18n: getTranslator(state),
-}))(HeaderInitial);
+}))(HeaderInitialComponent);
