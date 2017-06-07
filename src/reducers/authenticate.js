@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 import jwtDecode from 'jwt-decode';
 import { makeCreators, makeReducer } from './redux-utils';
 import { getEth } from './web3';
-import { signHash } from '../ether-utils';
+import { toChecksumAddress, signHash } from '../ether-utils';
 import { fetchJson } from '../utils';
 
 const initialState = {
@@ -47,18 +47,23 @@ export const doRenew = () => async (dispatch, getState) => {
 
 export const doDeauthenticate = () => setToken(null);
 
-export const doAuthenticate = address => async (dispatch, getState) => {
+export const doAuthenticate = uaddress => async (dispatch, getState) => {
   const url = getState().authenticate.url;
+
+  // Make sure address is checksummed
+  // TODO: Wallet addresses should already be checksummed
+  const address = toChecksumAddress(uaddress);
 
   // call /challenge
   const { challenge } = await fetchJson(`${url}/challenge`, { address });
 
   // Ethereum-TestRPC needs a workaround for signing
   // See: https://github.com/ethereumjs/testrpc/issues/243
+  // TODO: Move this workaround to the wallet implementation
   const hash = `0x${signHash(Buffer.from(challenge, 'hex')).toString('hex')}`;
 
   // Sign challenge
-  const response = (await getEth(getState()).sign(address, hash)).replace('0x', '');
+  const response = (await getEth(getState()).sign(uaddress, hash)).replace('0x', '');
 
   // call /login
   // NOTE: This will trigger user interaction
