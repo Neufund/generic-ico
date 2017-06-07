@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HeaderInitial from '../components/HeaderInitial';
 import Footer from '../components/Footer';
 
-const Layout = ({ children }) => (<div>
+const LayoutEntry = ({ children }) => (<div>
   <HeaderInitial />
   <div>
     {children}
@@ -11,8 +11,8 @@ const Layout = ({ children }) => (<div>
   <Footer />
 </div>);
 
-Layout.propTypes = {
+LayoutEntry.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default LayoutEntry;
