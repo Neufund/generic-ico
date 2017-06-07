@@ -1,14 +1,7 @@
 import React from 'react';
 
-const Button = React.createClass({
-  render() {
-    return (
-      <button
-        onClick={this.props.handleClick}
-      >{this.props.label}</button>
-    );
-  },
-});
+
+const Button = () => <div> test </div>;
 
 module.exports = Button;
 
