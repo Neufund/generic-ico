@@ -23,7 +23,5 @@ Button.propTypes = {
 
 module.exports = Button;
 
-// todo: Add Flex box integration
-//       Add SASS implemenation
-//       Add additional abstractions
-//       Look into containers or stand alone
+// TODO: <Add additional abstractions colors modes>
+// TODO: <Look into containers or stand alone>
