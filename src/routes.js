@@ -7,11 +7,18 @@ import LoginNano from './views/LoginNano';
 import Register from './views/Register';
 import ConfirmEmail from './views/ConfirmEmail';
 import KYC from './views/KYC';
+import Test from './views/Test';
 import NotFound from './views/NotFound';
 
 const MainPage = () => (
   <Layout>
     <QuotedStartups />
+  </Layout>
+);
+
+const TestPage = () => (
+  <Layout>
+    <Test />
   </Layout>
 );
 
@@ -54,6 +61,7 @@ const NotFoundPage = () => (
 // Routes for redux-router-kit
 const routes = {
   '/': MainPage,
+  '/test': TestPage,
   '/login': LoginPage,
   '/login/nano': LoginNanoPage,
   '/register': RegisterPage,
