@@ -1,3 +1,4 @@
+// TODO: colors should have meaningful names
 $color1: #4A4A4A;
 $color2: #09719B;
 $color3: #8E9297;
@@ -11,6 +12,7 @@ $color10: #686E75;
 $color11: #315568;
 $color12: #B3B7Ba;
 
+// TODO: decode how do we import variables by scss import or css-modules composes
 .footer {
   color: $color5;
 }
