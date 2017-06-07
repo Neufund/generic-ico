@@ -1,9 +1,13 @@
 .our_button {
-           width: 100%;
+           width: 20%;
            border-radius: 4px;
            background-color: #09628D;
            color: white;
            text-align: center;
            height: 40px;
            line-height: 40px;
+       }
+.our_button:hover {
+           background-color: #09B6F7;
+           outline: none;
        }
