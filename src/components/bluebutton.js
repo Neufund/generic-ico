@@ -3,29 +3,22 @@ import PropTypes from 'prop-types';
 
 import styles from './bluebutton.scss';
 
-const Button = ({ targetTo, label, ...props }) =>
+const Button = ({ targetTo, children, label, ...props }) =>
 (
-  <div
-    className={styles.our_button}
-    role="button"
+  <button
+    className={styles.Button}
     tabIndex="-1"
     {...props}
-    onClick={(event) => {
-      event.preventDefault();
-      targetTo();
-    }}
+    onClick={() => { targetTo(); }}
   >
-    {label}
-  </div>
+    {children}
+  </button>
   );
 
 Button.propTypes = {
   targetTo: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-};
-
-Button.defaultProps = {
-  label: 'Name me!',
+  children: PropTypes.node.isRequired,
 };
 
 module.exports = Button;

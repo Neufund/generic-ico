@@ -1,4 +1,4 @@
-.our_button {
+.Button {
            width: 30%;
            border-radius: 4px;
            background-color: #09628D;
@@ -6,8 +6,9 @@
            text-align: center;
            height: 40px;
            line-height: 40px;
+           border:none;
        }
-.our_button:hover {
-           background-color: #09B6F7;
+.Button:hover {
+           background-color: #09769F;
            outline: none;
        }
