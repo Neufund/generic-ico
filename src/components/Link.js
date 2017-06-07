@@ -12,6 +12,7 @@ const LinkView = ({ targetTo, children, path, tabIndex, ...props }) =>
       event.preventDefault();
       targetTo(path);
     }}
+    style={{ cursor: 'pointer' }}
   >{children}</a>);
 
 LinkView.propTypes = {
