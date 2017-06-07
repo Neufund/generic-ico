@@ -3,15 +3,24 @@ import PropTypes from 'prop-types';
 
 import styles from './bluebutton.scss';
 
-const Button = ({ label, ...props }) => (
+const Button = ({ targetTo, label, ...props }) =>
+(
   <div
     className={styles.our_button}
+    role="button"
+    tabIndex="-1"
     {...props}
+    onClick={(event) => {
+      event.preventDefault();
+      targetTo();
+    }}
   >
     {label}
-  </div>);
+  </div>
+  );
 
 Button.propTypes = {
+  targetTo: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 };
 
