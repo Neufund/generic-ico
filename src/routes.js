@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './views/Layout';
+import LayoutEntry from './views/LayoutEntry';
 import QuotedStartups from './views/QuotedStartups';
 import Login from './views/Login';
 import LoginNano from './views/LoginNano';
@@ -15,9 +16,9 @@ const MainPage = () => (
 );
 
 const LoginPage = () => (
-  <Layout>
+  <LayoutEntry>
     <Login />
-  </Layout>
+  </LayoutEntry>
 );
 
 const LoginNanoPage = () => (

@@ -1,0 +1,48 @@
+@import "../styles/colors";
+
+.header {
+  height: 4.375rem;
+  line-height: 4.375rem;
+  composes: Montserrat from '../styles/fonts.scss';
+  border-bottom: 0.0625rem solid $color4;
+}
+
+.logo_container {
+  min-height: 1.875rem;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/header_neufund_logo.png");
+  background-size: 1.875rem;
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  // TODO: border should not take whole height of header - check designs
+  border-right: 0.0625rem $color6 solid ;
+}
+
+.main_area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: $color9;
+}
+
+.status {
+  font-size: 0.9375rem;
+  color: $color11;
+  padding-right: 2rem;
+}
+
+.register {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #fff;
+  background: linear-gradient(180deg, #09719B 0%, #09719B 2.36%, #424A52 100%);
+}

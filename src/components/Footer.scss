@@ -1,0 +1,9 @@
+.Footer {
+  height: 1rem;
+  composes: Montserrat from '../styles/fonts.scss';
+  composes: footer from '../styles/colors.scss';
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-align: right;
+}
