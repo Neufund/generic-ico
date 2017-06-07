@@ -1,28 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import AppBar from 'material-ui/AppBar';
-import { Toolbar } from 'material-ui/Toolbar';
 import { Card, CardText } from 'material-ui/Card';
 import Subheader from 'material-ui/Subheader';
 import { getTranslator } from '../reducers/translation';
-import RpcProviderSelector from './RpcProviderSelector';
-import WalletProviderSelector from './WalletProviderSelector';
-import Web3ProviderInfo from './Web3ProviderInfo';
-import Web3NodeInfo from './Web3NodeInfo';
-import Web3ChainInfo from './Web3ChainInfo';
-import Web3WalletInfo from './Web3WalletInfo';
-import Transactions from './Transactions';
-import TransferForm from './TransferForm';
-import Authenticate from './Authenticate';
+import RpcProviderSelector from '../components/RpcProviderSelector';
+import WalletProviderSelector from '../components/WalletProviderSelector';
+import Web3ProviderInfo from '../components/Web3ProviderInfo';
+import Web3NodeInfo from '../components/Web3NodeInfo';
+import Web3ChainInfo from '../components/Web3ChainInfo';
+import Web3WalletInfo from '../components/Web3WalletInfo';
+import Transactions from '../components/Transactions';
+import TransferForm from '../components/TransferForm';
+import Authenticate from '../components/Authenticate';
 
-export const AppComponent = ({ i18n }) => (
+export const TestComponent = ({ i18n }) => (
   <div>
-    <AppBar title={i18n('To do')} iconClassNameRight="muidocs-icon-navigation-expand-more" />
-    <Toolbar />
-    <br />
-    <Authenticate />
-    <br />
+    <Card>
+      <CardText>
+        <Authenticate />
+      </CardText>
+    </Card>
     <Card>
       <CardText>
         <Subheader>{i18n('Settings')}</Subheader>
@@ -31,7 +29,6 @@ export const AppComponent = ({ i18n }) => (
         <WalletProviderSelector />
       </CardText>
     </Card>
-    <br /><br />
     <Card>
       <CardText>
         <Subheader>Provider info</Subheader>
@@ -46,20 +43,18 @@ export const AppComponent = ({ i18n }) => (
         <Transactions />
       </CardText>
     </Card>
-    <br /><br />
     <Card>
       <CardText>
         <TransferForm />
       </CardText>
     </Card>
-    <br /><br />
   </div>
 );
 
-AppComponent.propTypes = {
+TestComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
 };
 
 export default connect(state => ({
   i18n: getTranslator(state),
-}))(AppComponent);
+}))(TestComponent);

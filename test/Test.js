@@ -4,11 +4,11 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { MockProviders, dispatch } from './helpers/MockProviders';
-import App from '../src/components/App';
+import Test from '../src/views/Test';
 import AppActions from './app-actions.json';
 
-describe('App', () => {
-  const appComponent = <MockProviders><App /></MockProviders>;
+describe('Test', () => {
+  const appComponent = <MockProviders><Test /></MockProviders>;
   let appMount;
 
   it('should mount', () => {
@@ -16,9 +16,6 @@ describe('App', () => {
   });
   it('should render', () => {
     appMount.render();
-  });
-  it('has title "To do"', () => {
-    expect(appMount.text()).to.contain('To do');
   });
   it('Should accept recorded actions', () => {
     dispatch(AppActions);
