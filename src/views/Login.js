@@ -7,7 +7,7 @@ export default () => (<div>
   <p>
     <KYCLink>Successful login when e-mail was used (next step will be possible KYC)</KYCLink>
   </p>
-  <Button />
+  <Button label={'Log in'} />
   <p>
     <RegisterLink>Register account</RegisterLink>
   </p>
