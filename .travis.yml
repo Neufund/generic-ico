@@ -11,4 +11,5 @@ install:
 script:
   - yarn test
   - yarn run -- codecov
-  - yarn lint
+  - yarn eslint
+  - yarn sass-lint
