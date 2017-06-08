@@ -12,13 +12,13 @@ import NotFound from './views/NotFound';
 
 const page = View => () => <Layout><View /></Layout>;
 
-const entryPage = View => () => <LayoutEntry><View /></LayoutEntry>;
+const entryPage = components => () => <LayoutEntry>{components}</LayoutEntry>;
 
 // Routes for redux-router-kit
 const routes = {
   '/': page(QuotedStartups),
   '/test': page(Test),
-  '/login': entryPage(Login),
+  '/login': entryPage([<Login />, <div>test</div>, 'test']),
   '/login/nano': page(LoginNano),
   '/register': page(Register),
   '/register/email/:confirmationId': page(ConfirmEmail),
