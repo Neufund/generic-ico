@@ -3,16 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Button.scss';
 
 const Button = ({ onClick, children, tabIndex, ...props }) =>
-(
-  <button
-    className={styles.Button}
-    tabIndex={tabIndex}
-    {...props}
-    onClick={() => onClick()}
-  >
+  (<button className={styles.button} tabIndex={tabIndex} {...props} onClick={() => onClick()}>
     {children}
-  </button>
-  );
+  </button>);
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -23,6 +16,7 @@ Button.propTypes = {
 Button.defaultProps = {
   tabIndex: '0',
 };
+
 module.exports = Button;
 
 // TODO: Add additional abstractions colors modes
