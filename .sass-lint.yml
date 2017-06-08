@@ -8,3 +8,6 @@ files:
     - 'public/**'
     - 'node_modules/**'
 rules:
+  property-sort-order:
+    - 1
+    - order: concentric
