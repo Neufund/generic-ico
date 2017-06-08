@@ -75,7 +75,7 @@
   "scripts": {
     "notes": "notes -s src/**",
     "sass-lint": "sass-lint -v -q",
-    "eslint":  "eslint --ignore-path .gitignore .",
+    "eslint": "eslint --ignore-path .gitignore .",
     "lint": "yarn eslint ; yarn sass-lint",
     "testrpcs": "testrpc --deterministic",
     "test": "babel-node node_modules/.bin/babel-istanbul cover _mocha --delay -- --require node_modules/ignore-styles",
