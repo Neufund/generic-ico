@@ -53,9 +53,13 @@ export default {
         use: [
           { loader: 'style-loader' },
           {
-            loader:
-              'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-            options: { camelCase: 'dashesOnly' },
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              camelCase: 'dashesOnly',
+            },
           },
           { loader: 'sass-loader' },
         ],
