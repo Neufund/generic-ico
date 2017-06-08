@@ -12,13 +12,14 @@ import NotFound from './views/NotFound';
 
 const page = View => () => <Layout><View /></Layout>;
 
+// TODO: this call gives react warning about "unique key propety"
 const entryPage = components => () => <LayoutEntry>{components}</LayoutEntry>;
 
 // Routes for redux-router-kit
 const routes = {
   '/': page(QuotedStartups),
   '/test': page(Test),
-  '/login': entryPage([<Login />, <div>test</div>, 'test']),
+  '/login': entryPage([<Login key="12" />, <div>test</div>, 'test']),
   '/login/nano': page(LoginNano),
   '/register': page(Register),
   '/register/email/:confirmationId': page(ConfirmEmail),
