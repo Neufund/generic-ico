@@ -52,7 +52,15 @@ export default {
         test: /\.s?css$/,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              camelCase: 'dashesOnly',
+            },
+          },
           { loader: 'sass-loader' },
         ],
         exclude: /flexboxgrid/,

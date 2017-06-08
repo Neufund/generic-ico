@@ -1,18 +1,23 @@
 // TODO: colors should have meaningful names
-$color1: #4A4A4A;
-$color2: #09719B;
-$color3: #8E9297;
-$color4: #D9DBDC;
-$color5: #8FA2AB;
-$color6: #424A52;
-$color7: #F88500;
-$color8: #9CACCC;
+$color1: #4a4a4a;
+$color2: #09719b;
+$color3: #8e9297;
+$color4: #d9dbdc;
+$color5: #8fa2ab;
+$color6: #424a52;
+$color7: #f88500;
+$color8: #9caccc;
 $color9: #032533;
-$color10: #686E75;
+$color10: #686e75;
 $color11: #315568;
-$color12: #B3B7Ba;
+$color12: #b3b7ba;
 
 // TODO: decode how do we import variables by scss import or css-modules composes
-.footer {
+%footer {
   color: $color5;
 }
+
+// Gradients
+// sass-lint:disable no-color-literals
+$gradient1: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
+// sass-lint:enable no-color-literals
