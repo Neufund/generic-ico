@@ -74,14 +74,16 @@
   },
   "scripts": {
     "notes": "notes -s src/**",
-    "lint": "eslint --ignore-path .gitignore .",
+    "sass-lint": "sass-lint -v -q",
+    "eslint":  "eslint --ignore-path .gitignore .",
+    "lint": "yarn eslint ; yarn sass-lint",
     "testrpcs": "testrpc --deterministic",
     "test": "babel-node node_modules/.bin/babel-istanbul cover _mocha --delay -- --require node_modules/ignore-styles",
     "test:watch": "yarn run test -- --watch --reporter min",
     "translate": "babel-node ./translations/update.js",
     "build": "babel-node node_modules/.bin/webpack",
     "serve": "babel-node node_modules/.bin/webpack-dev-server --https --colors --progress --history-api-fallback",
-    "precommit": "yarn test && yarn lint"
+    "precommit": "yarn sass-lint && yarn eslint && yarn test"
   },
   "description": "Node.js starter project",
   "repository": "git@github.com:remco/node-starter-kit.git",
