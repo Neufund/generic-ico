@@ -13,7 +13,7 @@ $color11: #315568;
 $color12: #b3b7ba;
 
 // TODO: decode how do we import variables by scss import or css-modules composes
-.footer {
+%footer {
   color: $color5;
 }
 
