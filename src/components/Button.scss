@@ -1,15 +1,20 @@
-.Button {
-  width: 30%;
-  border-radius: 4px;
-  background-color: #09628D;
-  color: white;
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-  border:none;
-}
+// TODO Move to src/styles/colors.scss
+$text: #fff;
+$normal: #09628d;
+$highlight: #09769f;
 
-.Button:hover {
-  background-color: #09769F;
-  outline: none;
+.button {
+  border: 0;
+  border-radius: 4px;
+  background-color: $normal;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: $text;
+
+  :hover {
+    outline: none;
+    background-color: $highlight;
+  }
 }
