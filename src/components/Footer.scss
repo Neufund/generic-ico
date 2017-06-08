@@ -1,6 +1,8 @@
+@import '../styles/fonts';
+
 .footer {
-  composes: montserrat from '../styles/fonts.scss';
-  composes: footer from '../styles/colors.scss';
+  @extend %montserrat;
+  @extend %footer;
   height: 1rem;
   text-align: right;
   line-height: 1;
