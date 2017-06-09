@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../components/Buttons.scss';
+import styles from './Buttons.scss';
 
 const buttonCreator = (type) => {
   const Button = ({ onClick, children, tabIndex, ...props }) => (
@@ -16,16 +16,16 @@ const buttonCreator = (type) => {
   Button.propTypes = {
     onClick: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
-    tabIndex: PropTypes.string.isRequired,
+    tabIndex: PropTypes.number.isRequired,
   };
 
   Button.defaultProps = {
-    tabIndex: '0',
+    tabIndex: 0,
   };
   return Button;
 };
 
 export const SquareButton = buttonCreator(styles.squareButton);
-export const RoundBlueButton = buttonCreator(styles.roundBlueButton);
+export const RoundButton = buttonCreator(styles.roundButton);
 export const RoundHeaderButton = buttonCreator(styles.roundHeaderButton);
-export const BlueBorderButton = buttonCreator(styles.blueBorderButton);
+export const BorderButton = buttonCreator(styles.BorderButton);
