@@ -1,0 +1,14 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.link {
+  @extend %montserrat;
+  width: 199px;
+  height: 19px;
+  text-align: left;
+  line-height: 19px;
+  color: $color11;
+  font-size: 15px;
+}
+
+//TODO: Change from px to % or em
