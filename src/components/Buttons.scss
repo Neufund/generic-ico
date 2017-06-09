@@ -1,19 +1,7 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
-//TODO :Add colors to Colors.scss
-$white: #fff;
-$blue: #09719b;
-$normal: #09628d;
-$highlight: #09769f;
-$gray: #424a52;
-$gradient: linear-gradient(180deg, $blue 0%, $blue 2.36%, $gray 100%);
-$font: Montserrat;
-$blueshadow: #a3c0cc;
-$grayshadow: #d9dbdc;
-$darkblueshadow: #315568;
-
-%generalbutton {
+%general-button {
   @extend %montserrat;
   display: block;
   outline: none;
@@ -23,7 +11,7 @@ $darkblueshadow: #315568;
 }
 
 %square {
-  @extend %generalbutton;
+  @extend %general-button;
   border-radius: 4px;
   background-color: $normal;
   width: 30%;
@@ -31,7 +19,7 @@ $darkblueshadow: #315568;
   text-align: center;
 }
 
-.squarebutton {
+.square-button {
   @extend %square;
   box-shadow: 0 2px 4px 0 $blueshadow;
   background-color: $normal;
@@ -45,7 +33,7 @@ $darkblueshadow: #315568;
   }
 }
 
-.blueborderbutton {
+.blue-border-button {
   @extend %square;
   border: 2px solid $blue;
   box-shadow: 0 1px 1px 0 $grayshadow;
@@ -57,7 +45,7 @@ $darkblueshadow: #315568;
 
 
 %round {
-  @extend %generalbutton;
+  @extend %general-button;
   border-radius: 20px;
   background: $gradient;
   height: 40px;
@@ -65,12 +53,12 @@ $darkblueshadow: #315568;
   color: $white;
 }
 
-.roundbluebutton {
+.round-blue-button {
   @extend %round;
   box-shadow: 0 1px 1px 0 $darkblueshadow;
 }
 
-.roundbluebuttonheader {
+.round-header-button {
   @extend  %round;
   box-shadow: 0 1px 1px 0 $blueshadow;
 }
