@@ -1,44 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../components/Button.scss';
-
-const buttonType = {
-  square_button: styles.squarebutton,
-  round_button: styles.roundbluebutton,
-  round_button_header: styles.roundbluebuttonheader,
-  border_button: styles.blueborderbutton,
-};
-
-const Button = ({ button, onClick, children, tabIndex, ...props }) => (
-  <button
-    className={buttonType[button]}
-    tabIndex={tabIndex}
-    {...props}
-    onClick={() => onClick()}
-  >
-    {children}
-  </button>);
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
-  tabIndex: PropTypes.string.isRequired,
-  button: PropTypes.string.isRequired,
-};
-
-Button.defaultProps = {
-  tabIndex: '0',
-};
+import styles from '../components/Buttons.scss';
 
 const ButtonCreator = (type) => {
-  const func = ({ children, ...props }) => <Button {...props} button={type}>{children}</Button>;
-  func.propTypes = {
+  const Button = ({ onClick, children, tabIndex, ...props }) => (
+    <button
+      className={type}
+      tabIndex={tabIndex}
+      {...props}
+      onClick={() => onClick()}
+    >
+      {children}
+    </button>);
+
+  Button.propTypes = {
+    onClick: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
+    tabIndex: PropTypes.string.isRequired,
+    button: PropTypes.string.isRequired,
   };
-  return func;
+
+  Button.defaultProps = {
+    tabIndex: '0',
+  };
+  return Button;
 };
 
-export const SquareButton = ButtonCreator('square_button');
-export const RoundButton = ButtonCreator('round_button');
-export const RoundHeaderBut = ButtonCreator('round_button_header');
-export const BorderButton = ButtonCreator('border_button');
+export const SquareButton = ButtonCreator(styles.squarebutton);
+export const RoundButton = ButtonCreator(styles.roundbluebutton);
+export const RoundHeaderBut = ButtonCreator(styles.roundbluebuttonheader);
+export const BorderButton = ButtonCreator(styles.blueborderbutton);
