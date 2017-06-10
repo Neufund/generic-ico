@@ -12,6 +12,19 @@ $color10: #686e75;
 $color11: #315568;
 $color12: #b3b7ba;
 
+//TODO rename colors
+
+$white: #fff;
+$blue: #09719b;
+$normal: #09628d;
+$highlight: #09769f;
+$gray: #424a52;
+$gradient: linear-gradient(180deg, $blue 0%, $blue 2.36%, $gray 100%);
+$font: Montserrat;
+$blueshadow: #a3c0cc;
+$grayshadow: #d9dbdc;
+$darkblueshadow: #315568;
+
 // TODO: decode how do we import variables by scss import or css-modules composes
 %footer {
   color: $color5;

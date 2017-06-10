@@ -1,0 +1,64 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+%general-button {
+  @extend %montserrat;
+  display: block;
+  outline: none;
+  border: 0;
+  width: 30%;
+  text-align: center;
+}
+
+%square {
+  @extend %general-button;
+  border-radius: 4px;
+  background-color: $normal;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+}
+
+.square-button {
+  @extend %square;
+  box-shadow: 0 2px 4px 0 $blueshadow;
+  background-color: $normal;
+  line-height: 40px;
+  color: $white;
+  font-size: 16px;
+
+  &:hover {
+    outline: none;
+    background-color: $highlight;
+  }
+}
+
+.border-button {
+  @extend %square;
+  border: 2px solid $blue;
+  box-shadow: 0 1px 1px 0 $grayshadow;
+  background-color: $white;
+  color: $blue;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+%round {
+  @extend %general-button;
+  border-radius: 20px;
+  background: $gradient;
+  height: 40px;
+  line-height: 40px;
+  color: $white;
+}
+
+.round-button {
+  @extend %round;
+  box-shadow: 0 1px 1px 0 $darkblueshadow;
+}
+
+.round-header-button {
+  @extend  %round;
+  box-shadow: 0 1px 1px 0 $blueshadow;
+}
