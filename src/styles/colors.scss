@@ -1,36 +1,33 @@
 // TODO: colors should have meaningful names
-$color1: #4a4a4a;
-$color2: #09719b;
-$color3: #8e9297;
-$color4: #d9dbdc;
-$color5: #8fa2ab;
-$color6: #424a52;
-$color7: #f88500;
-$color8: #9caccc;
-$color9: #032533;
-$color10: #686e75;
-$color11: #315568;
-$color12: #b3b7ba;
-
-//TODO rename colors
-
 $white: #fff;
-$blue: #09719b;
-$normal: #09628d;
+$very-dark-gray: #4a4a4a;
+$dark-blue: #09719b;
+$dark-gray-blue: #8e9297;
+$light-gray-blue: #d9dbdc;
+$dark-gray-blue2: #8fa2ab;
+$very-dark-gray-blue: #424a52;
+$orange: #f88500;
+$gray-blue: #9caccc;
+$very-dark-gray: #032533;
+$very-dark-blue: #315568;
+$gray-blue2: #a3c0cc;
+
+$border: light-gray-blue;
+$linkforeground: very-dark-blue;
+$altforeground: $dark-blue;
+$foreground: $white;
+$background: $white;
+$altbackground: $dark-blue;
 $highlight: #09769f;
-$gray: #424a52;
-$gradient: linear-gradient(180deg, $blue 0%, $blue 2.36%, $gray 100%);
-$font: Montserrat;
-$blueshadow: #a3c0cc;
-$grayshadow: #d9dbdc;
-$darkblueshadow: #315568;
+
 
 // TODO: decode how do we import variables by scss import or css-modules composes
 %footer {
-  color: $color5;
+  color: $dark-gray-blue2;
 }
 
 // Gradients
 // sass-lint:disable no-color-literals
+$gradient: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
 $gradient1: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
 // sass-lint:enable no-color-literals

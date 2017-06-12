@@ -13,7 +13,6 @@
 %square {
   @extend %general-button;
   border-radius: 4px;
-  background-color: $normal;
   width: 30%;
   height: 40px;
   text-align: center;
@@ -21,10 +20,10 @@
 
 .square-button {
   @extend %square;
-  box-shadow: 0 2px 4px 0 $blueshadow;
-  background-color: $normal;
+  box-shadow: 0 2px 4px 0 $gray-blue2;
+  background-color: $altbackground;
   line-height: 40px;
-  color: $white;
+  color: $foreground;
   font-size: 16px;
 
   &:hover {
@@ -35,10 +34,10 @@
 
 .border-button {
   @extend %square;
-  border: 2px solid $blue;
-  box-shadow: 0 1px 1px 0 $grayshadow;
-  background-color: $white;
-  color: $blue;
+  border: 2px solid $altforeground;
+  box-shadow: 0 1px 1px 0 $light-gray-blue;
+  background-color: $background;
+  color: $altforeground;
   font-size: 16px;
   font-weight: 500;
 }
@@ -47,18 +46,18 @@
 %round {
   @extend %general-button;
   border-radius: 20px;
-  background: $gradient;
+  background: $blue-gray-gradient;
   height: 40px;
   line-height: 40px;
-  color: $white;
+  color: $foreground;
 }
 
 .round-button {
   @extend %round;
-  box-shadow: 0 1px 1px 0 $darkblueshadow;
+  box-shadow: 0 1px 1px 0 $very-dark-blue;
 }
 
 .round-header-button {
   @extend  %round;
-  box-shadow: 0 1px 1px 0 $blueshadow;
+  box-shadow: 0 1px 1px 0 $gray-blue2;
 }
