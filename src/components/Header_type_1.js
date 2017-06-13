@@ -25,7 +25,7 @@ const HeaderInitialComponent = ({ i18n }) =>
                 {i18n('Log in')}
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} className={styles.createButton}>
               <RoundHeaderButton style={{ display: 'inline-block' }}>
                 {i18n('Create an account')}
               </RoundHeaderButton>
