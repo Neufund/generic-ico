@@ -58,4 +58,5 @@
 .round-header-button {
   @extend  %round;
   box-shadow: 0 .063rem .063rem 0 $gray-light-blue;
+  padding: 0 3.125rem;
 }
