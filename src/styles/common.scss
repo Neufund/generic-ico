@@ -1,0 +1,22 @@
+@import '../styles/colors';
+@import '../styles/dimensions';
+@import '../styles/fonts';
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-area {
+  position: relative;
+  flex: 1;
+  background: $gradient1;
+  padding-bottom: 1rem;
+}
+
+.width-limiter {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1326px;
+}
