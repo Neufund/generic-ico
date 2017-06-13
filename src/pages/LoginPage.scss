@@ -1,9 +1,12 @@
+// TODO: Move to colors
 $white: #fff;
+$shadow-color: #315568;
 
 .column-area {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   border-radius: .5rem;
+  box-shadow: 0 .125rem .25rem 0 $shadow-color;
   background-color: $white;
-  padding: 1rem;
+  padding: 1.125rem;
   height: 100%;
 }

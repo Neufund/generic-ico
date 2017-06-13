@@ -8,9 +8,13 @@
   height: 100vh;
 }
 
+// TODO: Move to colors
+$shadow-color2: #262b2f;
+
 .content-area {
   position: relative;
   flex: 1;
+  box-shadow: inset 0 .063rem .188em 0 $shadow-color2;
   background: $gradient1;
   padding-bottom: 1rem;
 }
@@ -18,5 +22,5 @@
 .width-limiter {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1326px;
+  max-width: 82.875rem;
 }
