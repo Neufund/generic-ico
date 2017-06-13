@@ -1,36 +1,23 @@
-// TODO: colors should have meaningful names
-$color1: #4a4a4a;
-$color2: #09719b;
-$color3: #8e9297;
-$color4: #d9dbdc;
-$color5: #8fa2ab;
-$color6: #424a52;
-$color7: #f88500;
-$color8: #9caccc;
-$color9: #032533;
-$color10: #686e75;
-$color11: #315568;
-$color12: #b3b7ba;
-
-//TODO rename colors
-
+$dark-blue: #09719b;
+$dark-gray-blue: #8fa2ab;
+$gray-blue: #9caccc;
+$gray-light-blue: #a3c0cc;
+$light-gray-blue: #d9dbdc;
+$very-dark-blue: #315568;
+$very-dark-gray-blue: #424a52;
+$very-dark-gray: #4a4a4a;
 $white: #fff;
-$blue: #09719b;
-$normal: #09628d;
-$highlight: #09769f;
-$gray: #424a52;
-$gradient: linear-gradient(180deg, $blue 0%, $blue 2.36%, $gray 100%);
-$font: Montserrat;
-$blueshadow: #a3c0cc;
-$grayshadow: #d9dbdc;
-$darkblueshadow: #315568;
+
+$altbackground: $dark-blue;
+$altforeground: $dark-blue;
+$background: $white;
+$border: $light-gray-blue;
+$foreground: $white;
+$highlight: $dark-blue;
+$linkforeground: $very-dark-blue;
+
+// sass-lint:disable no-color-literals
+$blue-gray-gradient: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
+// sass-lint:enable no-color-literals
 
 // TODO: decode how do we import variables by scss import or css-modules composes
-%footer {
-  color: $color5;
-}
-
-// Gradients
-// sass-lint:disable no-color-literals
-$gradient1: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
-// sass-lint:enable no-color-literals

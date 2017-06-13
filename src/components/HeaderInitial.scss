@@ -1,13 +1,10 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
-// TODO Move to colors
-$foreground: #fff;
-
 .header {
   @extend %montserrat;
 
-  border-bottom: .0625rem solid $color4;
+  border-bottom: .0625rem solid $border;
   height: 4.375rem;
   line-height: 4.375rem;
 }
@@ -18,7 +15,7 @@ $foreground: #fff;
 
 .logo {
   // TODO: border should not take whole height of header - check designs
-  border-right: .0625rem $color6 solid;
+  border-right: .0625rem $very-dark-gray-blue solid;
   background-image: url('../images/header_neufund_logo.png');
   background-repeat: no-repeat;
   background-position: right 1rem center;
@@ -33,18 +30,18 @@ $foreground: #fff;
 }
 
 .title {
-  color: $color9;
+  color: $very-dark-gray;
 }
 
 .status {
   padding-right: 2rem;
-  color: $color11;
+  color: $linkforeground;
   font-size: .9375rem;
 }
 
 .register {
   display: block;
-  background: $gradient1;
+  background: $blue-gray-gradient;
   width: 100%;
   height: 100%;
   text-align: center;

@@ -28,4 +28,4 @@ const buttonCreator = (type) => {
 export const SquareButton = buttonCreator(styles.squareButton);
 export const RoundButton = buttonCreator(styles.roundButton);
 export const RoundHeaderButton = buttonCreator(styles.roundHeaderButton);
-export const BorderButton = buttonCreator(styles.BorderButton);
+export const BorderButton = buttonCreator(styles.borderButton);
