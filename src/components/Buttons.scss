@@ -6,14 +6,12 @@
   display: block;
   outline: none;
   border: 0;
-  width: 30%;
   text-align: center;
 }
 
 %square {
   @extend %general-button;
   border-radius: 4px;
-  width: 30%;
   height: 40px;
   text-align: center;
 }
