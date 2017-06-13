@@ -9,10 +9,10 @@
 
 .footer {
   @extend %montserrat;
-  @extend %footer;
   height: 1rem;
   text-align: right;
   line-height: 1;
+  color: $dark-gray-blue;
   font-size: .75rem;
   font-weight: 300;
 }

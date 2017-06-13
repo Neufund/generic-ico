@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { getTranslator } from '../reducers/translation';
-import { RegisterLink } from '../components/PredefinedLinks';
+import { RoundHeaderButton } from './Buttons';
 
 import styles from './Header_type_1.scss';
 import common from '../styles/common.scss';
@@ -26,9 +26,9 @@ const HeaderInitialComponent = ({ i18n }) =>
               </div>
             </Col>
             <Col lg={3}>
-              <RegisterLink className={styles.register}>
+              <RoundHeaderButton style={{ display: 'inline-block' }}>
                 {i18n('Create an account')}
-              </RegisterLink>
+              </RoundHeaderButton>
             </Col>
           </Row>
         </Grid>
