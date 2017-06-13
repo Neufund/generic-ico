@@ -20,7 +20,7 @@
 
 .square-button {
   @extend %square;
-  box-shadow: 0 2px 4px 0 $gray-blue2;
+  box-shadow: 0 2px 4px 0 $gray-light-blue;
   background-color: $altbackground;
   line-height: 40px;
   color: $foreground;
@@ -59,5 +59,5 @@
 
 .round-header-button {
   @extend  %round;
-  box-shadow: 0 1px 1px 0 $gray-blue2;
+  box-shadow: 0 1px 1px 0 $gray-light-blue;
 }
