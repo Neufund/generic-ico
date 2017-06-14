@@ -8,7 +8,7 @@ const buttonCreator = (type) => {
       className={type}
       tabIndex={tabIndex}
       {...props}
-      onClick={() => onClick()}
+      onClick={event => onClick(event)}
     >
       {children}
     </button>);
