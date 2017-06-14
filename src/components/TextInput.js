@@ -1,24 +1,29 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { TextField } from 'redux-form-material-ui';
+import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 
+function RenderTextField({ ...props }) {
+  const textProp = Object.assign({}, props);
+  delete textProp.meta;
+  delete textProp.input;
 
-const TextInput = ({ name, placeholder, ...props }) => (
+  return (
+    <TextField
+      {...textProp}
+    />
+  );
+}
+const TextInput = ({ name, ...props }) => (
   <Field
-    name={name}
-    component={TextField}
     {...props}
-    placeholder={placeholder}
+    name={name}
+    id={name}
+    component={RenderTextField}
   />
   );
 TextInput.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-};
-
-TextInput.defaultProps = {
-  placeholder: '',
 };
 
 export default TextInput;
