@@ -1,8 +1,6 @@
 import React from 'react';
 import Layout from './views/Layout';
-// import LayoutEntry from './views/LayoutEntry';
 import QuotedStartups from './views/QuotedStartups';
-// import Login from './views/Login';
 import LoginNano from './views/LoginNano';
 import Register from './views/Register';
 import ConfirmEmail from './views/ConfirmEmail';
@@ -13,9 +11,6 @@ import NotFound from './views/NotFound';
 import LoginPage from './pages/LoginPage';
 
 const page = View => () => <Layout><View /></Layout>;
-
-// TODO: this call gives react warning about "unique key propety"
-// const entryPage = components => () => <LayoutEntry>{components}</LayoutEntry>;
 
 // Routes for redux-router-kit
 const routes = {

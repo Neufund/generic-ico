@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Header from '../components/Header_type_1';
-import Footer from '../components/Footer_temp';
+import Footer from '../components/Footer';
 import Login2FA from '../components/Login2FA';
 import LoginWeb3 from '../components/LoginWeb3';
 import LoginNeuKey from '../components/LoginNeuKey';
@@ -12,9 +12,7 @@ import common from '../styles/common.scss';
 export default () =>
   (<div className={common.appContainer}>
     <Header />
-
     <div className={common.contentArea}>
-
       <div className={common.widthLimiter}>
         <Grid fluid>
           <Row>
@@ -40,8 +38,6 @@ export default () =>
           </Row>
         </Grid>
       </div>
-
       <Footer />
     </div>
-
   </div>);
