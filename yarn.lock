@@ -5559,10 +5559,6 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-recaptcha@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/react-recaptcha/-/react-recaptcha-2.3.1.tgz#7eae86e99edfdaa16929e733b05f5164f059a221"
-
 react-redux@^5.0.4:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.5.tgz#f8e8c7b239422576e52d6b7db06439469be9846a"
