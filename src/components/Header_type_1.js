@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { routeTo } from 'redux-router-kit';
 import { getTranslator } from '../reducers/translation';
 import { RoundHeaderButton } from './Buttons';
 
 import styles from './Header_type_1.scss';
 import common from '../styles/common.scss';
 
-const HeaderInitialComponent = ({ i18n }) =>
+const HeaderInitialComponent = ({ i18n, targetTo }) =>
   (<header>
     <div className={common.widthLimiter}>
       <div className={styles.header}>
@@ -26,7 +27,10 @@ const HeaderInitialComponent = ({ i18n }) =>
               </div>
             </Col>
             <Col lg={3} className={styles.createButton}>
-              <RoundHeaderButton style={{ display: 'inline-block' }}>
+              <RoundHeaderButton
+                onClick={() => targetTo('/register')}
+                style={{ display: 'inline-block' }}
+              >
                 {i18n('Create an account')}
               </RoundHeaderButton>
             </Col>
@@ -38,8 +42,10 @@ const HeaderInitialComponent = ({ i18n }) =>
 
 HeaderInitialComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
+  targetTo: PropTypes.func.isRequired,
 };
 
-export default connect(state => ({
-  i18n: getTranslator(state),
-}))(HeaderInitialComponent);
+export default connect(
+  state => ({ i18n: getTranslator(state) }),
+  dispatch => ({ targetTo: path => dispatch(routeTo(path)) })
+)(HeaderInitialComponent);
