@@ -27,10 +27,7 @@ const HeaderInitialComponent = ({ i18n, targetTo }) =>
               </div>
             </Col>
             <Col lg={3} className={styles.createButton}>
-              <RoundHeaderButton
-                onClick={() => targetTo('/register')}
-                style={{ display: 'inline-block' }}
-              >
+              <RoundHeaderButton onClick={() => targetTo('/register')}>
                 {i18n('Create an account')}
               </RoundHeaderButton>
             </Col>
