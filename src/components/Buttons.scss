@@ -6,25 +6,24 @@
   display: block;
   outline: none;
   border: 0;
-  width: 30%;
+  cursor: pointer;
   text-align: center;
 }
 
 %square {
   @extend %general-button;
-  border-radius: 4px;
-  width: 30%;
-  height: 40px;
+  border-radius: .25rem;
+  height: 2.5rem;
   text-align: center;
 }
 
 .square-button {
   @extend %square;
-  box-shadow: 0 2px 4px 0 $gray-light-blue;
+  box-shadow: 0 .125rem .25rem 0 $gray-light-blue;
   background-color: $altbackground;
-  line-height: 40px;
+  line-height: 2.5rem;
   color: $foreground;
-  font-size: 16px;
+  font-size: 1rem;
 
   &:hover {
     outline: none;
@@ -34,30 +33,31 @@
 
 .border-button {
   @extend %square;
-  border: 2px solid $altforeground;
-  box-shadow: 0 1px 1px 0 $light-gray-blue;
+  border: .125rem solid $altforeground;
+  box-shadow: 0 .063rem .063rem 0 $light-gray-blue;
   background-color: $background;
   color: $altforeground;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 
 %round {
   @extend %general-button;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: $blue-gray-gradient;
-  height: 40px;
-  line-height: 40px;
+  height: 2.5rem;
+  line-height: 2.5rem;
   color: $foreground;
 }
 
 .round-button {
   @extend %round;
-  box-shadow: 0 1px 1px 0 $very-dark-blue;
+  box-shadow: 0 .063rem .063rem 0 $very-dark-blue;
 }
 
 .round-header-button {
   @extend  %round;
-  box-shadow: 0 1px 1px 0 $gray-light-blue;
+  box-shadow: 0 .063rem .063rem 0 $gray-light-blue;
+  padding: 0 3.125rem;
 }
