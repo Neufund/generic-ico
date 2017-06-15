@@ -17,23 +17,25 @@ export default () =>
         <Grid fluid>
           <Row>
             <Col lgOffset={1} lg={10}>
-              <Row>
-                <Col lg={4}>
-                  <div className={styles.columnArea}>
-                    <Login2FA />
-                  </div>
-                </Col>
-                <Col lg={4}>
-                  <div className={styles.columnArea}>
-                    <LoginWeb3 />
-                  </div>
-                </Col>
-                <Col lg={4}>
-                  <div className={styles.columnArea}>
-                    <LoginNeuKey />
-                  </div>
-                </Col>
-              </Row>
+              <Grid fluid>
+                <Row>
+                  <Col lg={4}>
+                    <div className={styles.columnArea}>
+                      <Login2FA />
+                    </div>
+                  </Col>
+                  <Col lg={4}>
+                    <div className={styles.columnArea}>
+                      <LoginWeb3 />
+                    </div>
+                  </Col>
+                  <Col lg={4}>
+                    <div className={styles.columnArea}>
+                      <LoginNeuKey />
+                    </div>
+                  </Col>
+                </Row>
+              </Grid>
             </Col>
           </Row>
         </Grid>
