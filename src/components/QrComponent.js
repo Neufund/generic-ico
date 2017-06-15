@@ -10,7 +10,6 @@ const QrComponent = ({ value, ...props }) => (
 
 QrComponent.propTypes = {
   value: PropTypes.string.isRequired,
-
 };
 
 export default QrComponent;
