@@ -8,13 +8,10 @@
   height: 100vh;
 }
 
-// TODO: Move to colors
-$shadow-color2: #262b2f;
-
 .content-area {
   position: relative;
   flex: 1;
-  box-shadow: inset 0 .063rem .188em 0 $shadow-color2;
+  box-shadow: inset 0 .063rem .188em 0 $shadow-for-gradient-area;
   background: $blue-gray-gradient;
   padding-bottom: $footer-height;
 }

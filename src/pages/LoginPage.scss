@@ -1,11 +1,9 @@
 @import '../styles/colors';
 
-$shadow-color: #315568;
-
 .column-area {
   margin-top: 2.5rem;
   border-radius: .5rem;
-  box-shadow: 0 .125rem .25rem 0 $shadow-color;
+  box-shadow: 0 .125rem .25rem 0 $shadow-for-white-column;
   background-color: $white;
   padding: 1.125rem;
   height: 100%;
