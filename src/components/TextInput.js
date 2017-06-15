@@ -23,7 +23,6 @@ const TextInput = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
-    id={name}
     component={RenderTextField}
   />
   );
