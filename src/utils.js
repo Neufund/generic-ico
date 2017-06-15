@@ -3,6 +3,8 @@ import BN from 'bn';
 
 export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+export const range = count => [...Array(count).keys()];
+
 export const deepfreeze = (obj) => {
   if (obj !== null && typeof obj === 'object') {
     Object.freeze(obj);

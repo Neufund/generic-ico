@@ -44,10 +44,8 @@ const initialState = {
     blockHash: null,
     blockTime: null,
   },
-  wallet: null,
   rpcProviders: initialRpcProviders,
   chains: initialChains,
-  walletProviders: [{ label: 'Node' }, { label: 'Ledger Nano' }, { label: 'Neufund 2FA' }],
 };
 
 const reducers = {
@@ -55,14 +53,8 @@ const reducers = {
     ...state,
     version: initialState.version,
     node: initialState.version,
-    wallet: initialState.wallet,
     chain: initialState.chain,
     rpcProvider,
-  }),
-  setWalletProvider: (state, walletProvider) => ({
-    ...state,
-    walletProvider,
-    wallet: initialState.wallet,
   }),
   setVersion: (state, version) => ({
     ...state,
@@ -94,7 +86,7 @@ const reducers = {
 
 export const reducer = makeReducer(reducers, initialState);
 export const creators = makeCreators(reducers);
-export const { setWalletProvider, setVersion, setNode, setWallet, setChain, newBlock } = creators;
+export const { setVersion, setNode, setChain, newBlock } = creators;
 export default reducer;
 
 // Selectors
@@ -244,23 +236,6 @@ export const fetchChainState = () => async (dispatch, getState) => {
       name: await identifyChain(state.web3.chains, async n => (await eth.getBlock(n)).hash),
       gasPrice: stringifyNumber(await fallback(eth.getGasPrice())),
     })
-  );
-};
-
-export const fetchWalletState = () => async (dispatch, getState) => {
-  const state = getState();
-  const eth = getEth(state);
-  const accounts = await fallback(eth.getAccounts(), []);
-  await dispatch(
-    setWallet(
-      await Promise.all(
-        accounts.map(async address => ({
-          address,
-          balance: stringifyNumber(await fallback(eth.getBalance(address))),
-          count: await fallback(eth.getTransactionCount(address)),
-        }))
-      )
-    )
   );
 };
 
