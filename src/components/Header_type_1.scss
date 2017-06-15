@@ -1,9 +1,6 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
-// TODO Move to colors
-$foreground: #fff;
-
 .header {
   @extend %montserrat;
   border-bottom: .0625rem solid $light-gray-blue;
