@@ -27,6 +27,8 @@ const HeaderInitialComponent = ({ i18n, targetTo }) =>
               </div>
             </Col>
             <Col lg={3} className={styles.createButton}>
+              { /* TODO: hardcoding link is not best idea. There is discussion how this can be
+                changed - https://github.com/Neufund/generic-ico/pull/21#discussion_r121947303 */}
               <RoundHeaderButton onClick={() => targetTo('/register')}>
                 {i18n('Create an account')}
               </RoundHeaderButton>
