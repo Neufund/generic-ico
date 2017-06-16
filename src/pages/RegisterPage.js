@@ -10,7 +10,6 @@ export default () =>
     <HeaderRegistration />
     <div className={`${common.layoutContentArea} ${common.gradientContentArea}`}>
       <div className={common.layoutWidthLimiter}>
-
         <Grid fluid>
           <Row>
             <Col lgOffset={3} lg={6}>
