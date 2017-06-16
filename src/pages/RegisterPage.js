@@ -7,10 +7,11 @@ import styles from './RegisterPage.scss';
 import common from '../styles/common.scss';
 
 export default () =>
-  (<div className={common.appContainer}>
+  (<div className={common.layoutAppContainer}>
     <HeaderRegistration />
-    <div className={common.contentArea}>
-      <div className={common.widthLimiter}>
+    <div className={`${common.layoutContentArea} ${styles.contentArea}`}>
+      <div className={common.layoutWidthLimiter}>
+
         <Grid fluid>
           <Row>
             <Col lgOffset={3} lg={6}>

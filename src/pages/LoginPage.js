@@ -10,10 +10,10 @@ import styles from './LoginPage.scss';
 import common from '../styles/common.scss';
 
 export default () =>
-  (<div className={common.appContainer}>
+  (<div className={common.layoutAppContainer}>
     <HeaderUnauthenticated />
-    <div className={common.contentArea}>
-      <div className={common.widthLimiter}>
+    <div className={`${common.layoutContentArea} ${styles.contentArea}`}>
+      <div className={common.layoutWidthLimiter}>
         <Grid fluid>
           <Row>
             <Col lgOffset={1} lg={10}>

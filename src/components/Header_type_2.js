@@ -14,7 +14,7 @@ import common from '../styles/common.scss';
 
 const HeaderType2Component = ({ i18n, targetTo }) =>
   (<header>
-    <div className={common.widthLimiter}>
+    <div className={common.layoutWidthLimiter}>
       <div className={styles.header}>
         <Grid fluid>
           <Row>
