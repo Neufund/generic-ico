@@ -12,6 +12,7 @@ import reduxLogger from 'redux-logger';
 import reducer from './reducers';
 import appRoutes from './routes';
 import { deepfreeze } from './utils';
+import muiTheme from './muiTheme';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -22,7 +23,7 @@ const root = document.getElementById('react-root');
 const render = (store, routes) => {
   const NotFound = routes['/not-found'];
   ReactDOM.render(
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <Provider store={store}>
         <RouterHistoryContainer
           routes={routes}
