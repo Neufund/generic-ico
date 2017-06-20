@@ -8,6 +8,7 @@ import NotFound from './views/NotFound';
 
 import LoginPage from './pages/LoginPage';
 import LoginNanoPage from './pages/LoginNanoPage';
+import LoginNanoPage2 from './pages/LoginNanoPage2';
 import RegisterPage from './pages/RegisterPage';
 
 const page = View => () => <Layout><View /></Layout>;
@@ -18,6 +19,8 @@ const routes = {
   '/test': page(Test),
   '/login': LoginPage,
   '/login/nano': LoginNanoPage,
+  // TODO: /login/nano/temp is just temporary route
+  '/login/nano/temp': LoginNanoPage2,
   '/register': RegisterPage,
   '/register/email/:confirmationId': page(ConfirmEmail),
   '/kyc': page(KYC),

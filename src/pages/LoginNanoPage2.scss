@@ -1,0 +1,46 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.column-area {
+  @extend %montserrat;
+  margin-top: 3.125rem;
+  background-color: $white;
+  padding: 1.125rem;
+  height: 100%;
+  font-size: .875rem;
+  font-weight: 300;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-top: 1.625rem;
+    margin-bottom: 1.25rem;
+    color: $black;
+    font-size: 1rem;
+    font-weight: 300;
+
+    &::before {
+      margin: 0 .5rem;
+      font-family: 'Material Icons' ;
+      font-size: .875rem;
+      content: 'fiber_manual_record';
+    }
+  }
+
+  p {
+    color: $very-dark-gray;
+  }
+
+  .help {
+    color: $grey;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+  }
+}
