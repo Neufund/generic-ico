@@ -7,7 +7,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 import styles from './ProcessIndicator.scss';
 import common from '../styles/common.scss';
 
-const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, processName, stepName }) =>
+const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
   (<div className={styles.processIndicator}>
     <div className={common.layoutWidthLimiter}>
       <Grid fluid>
@@ -25,25 +25,25 @@ const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, processName, stepNa
             {stepNumber && stepsTotal &&
               <span className={styles.stepNumber}>(step {stepNumber} of {stepsTotal})</span>
             }
-            <span className={styles.stepDescription}> {processName} {stepName}</span>
+            <span className={styles.stepDescription}> {stepName}</span>
           </Col>
         </Row>
       </Grid>
     </div>
-    <LinearProgress mode="determinate" value={(stepNumber / stepsTotal) * 100} />
+    {stepNumber && stepsTotal &&
+      <LinearProgress mode="determinate" value={(stepNumber / stepsTotal) * 100} />
+    }
   </div>);
 
 ProcessIndicatorComponent.propTypes = {
   stepsTotal: PropTypes.number,
   stepNumber: PropTypes.number,
-  processName: PropTypes.string,
   stepName: PropTypes.string,
 };
 
 ProcessIndicatorComponent.defaultProps = {
   stepsTotal: undefined,
   stepNumber: undefined,
-  processName: undefined,
   stepName: undefined,
 };
 
