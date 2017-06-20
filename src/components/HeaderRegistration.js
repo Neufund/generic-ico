@@ -12,7 +12,7 @@ import common from '../styles/common.scss';
 // TODO: HeaderRegistration and HeaderUnauthenticated are similar we could do generic component.
 // Consult details of design with Ola font sizes and column widths etc.
 
-const HeaderRegistrationComponent = ({ i18n, targetTo }) =>
+const HeaderRegistrationComponent = ({ i18n, onLogInClick }) =>
   (<header>
     <div className={common.widthLimiter}>
       <div className={styles.header}>
@@ -30,9 +30,7 @@ const HeaderRegistrationComponent = ({ i18n, targetTo }) =>
               </div>
             </Col>
             <Col lg={2}>
-              { /* TODO: hardcoding link is not best idea. There is discussion how this can be
-                changed - https://github.com/Neufund/generic-ico/pull/21#discussion_r121947303 */}
-              <BorderHeaderButton onClick={() => targetTo('/login')}>
+              <BorderHeaderButton onClick={onLogInClick}>
                 {i18n('Log in')}
               </BorderHeaderButton>
             </Col>
@@ -44,10 +42,10 @@ const HeaderRegistrationComponent = ({ i18n, targetTo }) =>
 
 HeaderRegistrationComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
-  targetTo: PropTypes.func.isRequired,
+  onLogInClick: PropTypes.func.isRequired,
 };
 
 export default connect(
   state => ({ i18n: getTranslator(state) }),
-  dispatch => ({ targetTo: path => dispatch(routeTo(path)) })
+  dispatch => ({ onLogInClick: () => dispatch(routeTo('/login')) })
 )(HeaderRegistrationComponent);
