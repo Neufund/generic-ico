@@ -3,32 +3,21 @@ import { Field } from 'redux-form';
 import DatePicker from 'material-ui/DatePicker';
 import PropTypes from 'prop-types';
 
-const mapError = ({
-    meta: { touched, error, warning } = {},
-    input,
-    ...props
-  }) =>
-  (touched && (error || warning)
-    ? {
-      ...props,
-      ...input,
-      errorText: error || warning,
-    }
-    : { ...input, ...props });
+const RenderCalendar = props =>
+  <DatePicker {...props} />;
 
-const RenderTextField = props =>
-  <DatePicker {...mapError(props)} />;
-
-const TextInput = ({ name, ...props }) => (
+const Calendar = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
     format={null}
-    component={RenderTextField}
+    component={RenderCalendar}
   />
   );
-TextInput.propTypes = {
+Calendar.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default TextInput;
+export default Calendar;
+
+// TODO: Solve the meta input extra props problem
