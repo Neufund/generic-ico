@@ -49,6 +49,12 @@ const LoginNanoPageComponent = ({ i18n }) =>
                       <img src={nano3} alt="" />
                       <h2>{i18n('Step 3')}</h2>
                       <p>{i18n('Pick the Ethereum app – after placing the Ethereum icon in the middle of the Nano Screen press two keys at the same time to confirm')}</p>
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lgOffset={8} lg={4}>
+                    <div className={styles.columnArea}>
                       <p className={styles.help}>{i18n('Your NeuKey doesn’t work, you lost it or something something?')} <a href="">{i18n('Contact support')}</a></p>
                     </div>
                   </Col>
