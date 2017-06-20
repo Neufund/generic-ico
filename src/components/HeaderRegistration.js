@@ -6,13 +6,13 @@ import { routeTo } from 'redux-router-kit';
 import { getTranslator } from '../reducers/translation';
 import { BorderHeaderButton } from './Buttons';
 
-import styles from './Header_type_2.scss';
+import styles from './HeaderRegistration.scss';
 import common from '../styles/common.scss';
 
-// TODO: Header type 2 and 1 are similar we should consider generic component.
+// TODO: HeaderRegistration and HeaderUnauthenticated are similar we could do generic component.
 // Consult details of design with Ola font sizes and column widths etc.
 
-const HeaderType2Component = ({ i18n, targetTo }) =>
+const HeaderRegistrationComponent = ({ i18n, targetTo }) =>
   (<header>
     <div className={common.widthLimiter}>
       <div className={styles.header}>
@@ -42,7 +42,7 @@ const HeaderType2Component = ({ i18n, targetTo }) =>
     </div>
   </header>);
 
-HeaderType2Component.propTypes = {
+HeaderRegistrationComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
   targetTo: PropTypes.func.isRequired,
 };
@@ -50,4 +50,4 @@ HeaderType2Component.propTypes = {
 export default connect(
   state => ({ i18n: getTranslator(state) }),
   dispatch => ({ targetTo: path => dispatch(routeTo(path)) })
-)(HeaderType2Component);
+)(HeaderRegistrationComponent);

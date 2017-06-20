@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import HeaderType2 from '../components/Header_type_2';
+import HeaderRegistration from '../components/HeaderRegistration';
 import Footer from '../components/Footer';
 
 
@@ -9,7 +9,7 @@ import common from '../styles/common.scss';
 
 export default () =>
   (<div className={common.appContainer}>
-    <HeaderType2 />
+    <HeaderRegistration />
     <div className={common.contentArea}>
       <div className={common.widthLimiter}>
         <Grid fluid>
