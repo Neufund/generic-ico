@@ -9,7 +9,7 @@ import { RoundHeaderButton } from './Buttons';
 import styles from './HeaderUnauthenticated.scss';
 import common from '../styles/common.scss';
 
-const HeaderUnauthenticatedComponent = ({ i18n, targetTo }) =>
+const HeaderUnauthenticatedComponent = ({ i18n, onCreateAccountClick }) =>
   (<header>
     <div className={common.widthLimiter}>
       <div className={styles.header}>
@@ -27,9 +27,7 @@ const HeaderUnauthenticatedComponent = ({ i18n, targetTo }) =>
               </div>
             </Col>
             <Col lg={3} className={styles.createButton}>
-              { /* TODO: hardcoding link is not best idea. There is discussion how this can be
-                changed - https://github.com/Neufund/generic-ico/pull/21#discussion_r121947303 */}
-              <RoundHeaderButton onClick={() => targetTo('/register')}>
+              <RoundHeaderButton onClick={onCreateAccountClick}>
                 {i18n('Create an account')}
               </RoundHeaderButton>
             </Col>
@@ -41,10 +39,10 @@ const HeaderUnauthenticatedComponent = ({ i18n, targetTo }) =>
 
 HeaderUnauthenticatedComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
-  targetTo: PropTypes.func.isRequired,
+  onCreateAccountClick: PropTypes.func.isRequired,
 };
 
 export default connect(
   state => ({ i18n: getTranslator(state) }),
-  dispatch => ({ targetTo: path => dispatch(routeTo(path)) })
+  dispatch => ({ onCreateAccountClick: () => dispatch(routeTo('/register')) })
 )(HeaderUnauthenticatedComponent);
