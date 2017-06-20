@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import Header from '../components/Header_type_1';
+import HeaderUnauthenticated from '../components/HeaderUnauthenticated';
 import Footer from '../components/Footer';
 import Login2FA from '../components/Login2FA';
 import LoginWeb3 from '../components/LoginWeb3';
@@ -11,7 +11,7 @@ import common from '../styles/common.scss';
 
 export default () =>
   (<div className={common.appContainer}>
-    <Header />
+    <HeaderUnauthenticated />
     <div className={common.contentArea}>
       <div className={common.widthLimiter}>
         <Grid fluid>

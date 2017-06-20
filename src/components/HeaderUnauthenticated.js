@@ -6,10 +6,10 @@ import { routeTo } from 'redux-router-kit';
 import { getTranslator } from '../reducers/translation';
 import { RoundHeaderButton } from './Buttons';
 
-import styles from './Header_type_1.scss';
+import styles from './HeaderUnauthenticated.scss';
 import common from '../styles/common.scss';
 
-const HeaderType1Component = ({ i18n, targetTo }) =>
+const HeaderUnauthenticatedComponent = ({ i18n, targetTo }) =>
   (<header>
     <div className={common.widthLimiter}>
       <div className={styles.header}>
@@ -39,7 +39,7 @@ const HeaderType1Component = ({ i18n, targetTo }) =>
     </div>
   </header>);
 
-HeaderType1Component.propTypes = {
+HeaderUnauthenticatedComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
   targetTo: PropTypes.func.isRequired,
 };
@@ -47,4 +47,4 @@ HeaderType1Component.propTypes = {
 export default connect(
   state => ({ i18n: getTranslator(state) }),
   dispatch => ({ targetTo: path => dispatch(routeTo(path)) })
-)(HeaderType1Component);
+)(HeaderUnauthenticatedComponent);
