@@ -11,7 +11,7 @@ import { getTranslator } from '../reducers/translation';
 
 import nano from '../images/tutorial-NANO-4.png';
 
-import styles from './LoginNanoPage2.scss';
+import styles from './LoginNanoPage.scss';
 import common from '../styles/common.scss';
 
 const LoginNanoPageComponent = ({ i18n }) =>
