@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import HeaderProfileContext from '../components/HeaderProfileContext';
 import Footer from '../components/Footer';
 import ProcessIndicator from '../components/ProcessIndicator';
+import Link from '../components/Link';
 
 import { getTranslator } from '../reducers/translation';
 
@@ -53,7 +54,12 @@ const LoginNanoPageComponent = ({ i18n }) =>
                   </Col>
                 </Row>
                 <Row>
-                  <Col lgOffset={8} lg={4}>
+                  <Col lg={4}>
+                    <div className={styles.columnArea}>
+                      <Link path="/login/nano/temp"> go to second step (temp link)</Link>
+                    </div>
+                  </Col>
+                  <Col lgOffset={4} lg={4}>
                     <div className={styles.columnArea}>
                       <p className={styles.help}>{i18n('Your NeuKey doesn’t work, you lost it or something something?')} <a href="">{i18n('Contact support')}</a></p>
                     </div>
