@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import HeaderType3 from '../components/Header_type_3';
+import HeaderProfileContext from '../components/HeaderProfileContext';
 import Footer from '../components/Footer';
 import ProcessIndicator from '../components/ProcessIndicator';
 
@@ -17,7 +17,7 @@ import common from '../styles/common.scss';
 
 const LoginNanoPageComponent = ({ i18n }) =>
   (<div className={common.layoutAppContainer}>
-    <HeaderType3 />
+    <HeaderProfileContext />
     <ProcessIndicator
       stepsTotal={2}
       stepNumber={1}

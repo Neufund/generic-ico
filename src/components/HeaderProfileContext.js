@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { getTranslator } from '../reducers/translation';
 
-import styles from './Header_type_3.scss';
+import styles from './HeaderProfileContext.scss';
 import common from '../styles/common.scss';
 
-const HeaderType3Component = ({ i18n }) =>
+const HeaderProfileContextComponent = ({ i18n }) =>
   (<header className={styles.header}>
     <div className={common.layoutWidthLimiter}>
       <Grid fluid>
@@ -20,10 +20,10 @@ const HeaderType3Component = ({ i18n }) =>
     </div>
   </header>);
 
-HeaderType3Component.propTypes = {
+HeaderProfileContextComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
 };
 
 export default connect(
   state => ({ i18n: getTranslator(state) })
-)(HeaderType3Component);
+)(HeaderProfileContextComponent);
