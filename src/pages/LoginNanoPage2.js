@@ -22,7 +22,7 @@ const LoginNanoPageComponent = ({ i18n }) =>
       stepNumber={2}
       stepName={i18n('Sign in logging in')}
     />
-    <div className={common.layoutContentArea}>
+    <div className={`${common.layoutContentArea} ${styles.layout}`}>
       <div className={common.layoutWidthLimiter}>
         <Grid fluid>
           <Row>

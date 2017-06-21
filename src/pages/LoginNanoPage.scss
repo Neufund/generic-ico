@@ -1,9 +1,13 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
+.layout {
+  padding-top: 3.125rem;
+}
+
 .column-area {
   @extend %montserrat;
-  margin-top: 3.125rem;
+
   background-color: $white;
   padding: 1.125rem;
   height: 100%;

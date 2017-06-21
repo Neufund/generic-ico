@@ -23,7 +23,7 @@ const LoginNanoPageComponent = ({ i18n }) =>
       stepNumber={1}
       stepName={i18n('Logging in with NeuKey')}
     />
-    <div className={common.layoutContentArea}>
+    <div className={`${common.layoutContentArea} ${styles.layout}`}>
       <div className={common.layoutWidthLimiter}>
         <Grid fluid>
           <Row>
