@@ -1,11 +1,12 @@
 @import '../styles/colors';
+@import '../styles/dimensions';
 @import '../styles/fonts';
 
 .header {
   @extend %montserrat;
   border-bottom: .0625rem solid $light-gray-blue;
-  height: 4.375rem;
-  line-height: 4.375rem;
+  height: $header-height;
+  line-height: $header-height;
 }
 
 .logo-container {
