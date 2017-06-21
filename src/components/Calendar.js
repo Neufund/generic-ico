@@ -1,17 +1,14 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import DatePicker from 'material-ui/DatePicker';
+import { DatePicker } from 'redux-form-material-ui';
 import PropTypes from 'prop-types';
-
-const RenderCalendar = props =>
-  <DatePicker {...props} />;
 
 const Calendar = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
     format={null}
-    component={RenderCalendar}
+    component={DatePicker}
   />
   );
 Calendar.propTypes = {
@@ -20,4 +17,4 @@ Calendar.propTypes = {
 
 export default Calendar;
 
-// TODO: Solve the meta input extra props problem
+// TODO: Lose material-ui
