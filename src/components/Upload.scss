@@ -1,0 +1,43 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.logo {
+  width: 14px;
+  height: 17px;
+  vertical-align: sub;
+  color: $upload-icon;
+}
+
+%link {
+  @extend %montserrat;
+  cursor: pointer;
+}
+
+.overide {
+  @extend %link;
+}
+
+
+.header {
+  @extend %link;
+  height: 19px;
+  text-align: left;
+  line-height: 19px;
+  font-size: 15px;
+}
+
+.body {
+  @extend %link;
+  height: 40px;
+  text-indent: 3.3em;
+  line-height: 20px;
+  color: $very-dark-gray;
+  font-family: 'Open Sans';
+  font-size: 12px;
+}
+
+.preview {
+  max-width: '100px';
+}
+
+//TODO: Change from px to % or em
