@@ -20,7 +20,7 @@ const LoginNanoPageComponent = ({ i18n }) =>
     <ProcessIndicator
       stepsTotal={2}
       stepNumber={2}
-      stepName="Sign in logging in"
+      stepName={i18n('Sign in logging in')}
     />
     <div className={common.layoutContentArea}>
       <div className={common.layoutWidthLimiter}>

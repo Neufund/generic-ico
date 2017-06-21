@@ -21,7 +21,7 @@ const LoginNanoPageComponent = ({ i18n }) =>
     <ProcessIndicator
       stepsTotal={2}
       stepNumber={1}
-      stepName="Logging in with NeuKey"
+      stepName={i18n('Logging in with NeuKey')}
     />
     <div className={common.layoutContentArea}>
       <div className={common.layoutWidthLimiter}>
