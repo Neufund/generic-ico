@@ -6,6 +6,7 @@ $light-gray-blue: #d9dbdc;
 $very-dark-blue: #315568;
 $very-dark-gray-blue: #424a52;
 $very-dark-gray: #4a4a4a;
+$almost-black: #262b2f;
 $white: #fff;
 
 $altbackground: $dark-blue;
@@ -15,6 +16,8 @@ $border: $light-gray-blue;
 $foreground: $white;
 $highlight: $dark-blue;
 $linkforeground: $very-dark-blue;
+$shadow-for-gradient-area: $almost-black;
+$shadow-for-white-column: $very-dark-blue;
 
 // sass-lint:disable no-color-literals
 $blue-gray-gradient: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);

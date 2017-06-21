@@ -3,8 +3,7 @@
 
 .header {
   @extend %montserrat;
-
-  border-bottom: .0625rem solid $border;
+  border-bottom: .0625rem solid $light-gray-blue;
   height: 4.375rem;
   line-height: 4.375rem;
 }
@@ -14,14 +13,23 @@
 }
 
 .logo {
-  // TODO: border should not take whole height of header - check designs
-  border-right: .0625rem $very-dark-gray-blue solid;
+  position: relative;
   background-image: url('../images/header_neufund_logo.png');
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1.875rem;
   width: 100%;
   height: 100%;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    border-right: .0625rem solid $very-dark-gray-blue;
+    width: .0625rem;
+    height: 60%;
+    content: '';
+  }
 }
 
 .main-area {
@@ -35,16 +43,10 @@
 
 .status {
   padding-right: 2rem;
-  color: $linkforeground;
+  color: $very-dark-blue;
   font-size: .9375rem;
 }
 
-.register {
-  display: block;
-  background: $blue-gray-gradient;
-  width: 100%;
-  height: 100%;
+.create-button {
   text-align: center;
-  color: $foreground;
-  font-size: .9375rem;
 }
