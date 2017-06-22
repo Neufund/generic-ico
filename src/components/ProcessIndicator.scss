@@ -24,6 +24,14 @@
   }
 }
 
+.back-icon {
+  padding-bottom: 0 !important; // sass-lint:disable-line no-important
+}
+
+.back-icon-color {
+  color: $very-light-green !important; // sass-lint:disable-line no-important
+}
+
 .text {
   position: relative;
 

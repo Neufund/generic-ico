@@ -18,9 +18,8 @@ const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
           <Col lg={1} className={`${styles.column} ${styles.back}`}>
             {/* TODO: consult with designer exact sizes and positions of back arrow*/}
             <IconButton
-              iconClassName="material-icons"
-              iconStyle={{ color: '#E8EFE0' }}
-              style={{ paddingBottom: '1px' }}
+              iconClassName={`material-icons ${styles.backIconColor}`}
+              className={styles.backIcon}
             >keyboard_backspace</IconButton>
             <span className={styles.caption}>back</span>
           </Col>
