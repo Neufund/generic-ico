@@ -9,6 +9,9 @@ import { RoundHeaderButton } from './Buttons';
 import styles from './HeaderUnauthenticated.scss';
 import common from '../styles/common.scss';
 
+// TODO: HeaderRegistration and HeaderUnauthenticated are similar we could do generic component.
+// Consult details of design with Ola font sizes and column widths etc.
+
 const HeaderUnauthenticatedComponent = ({ i18n, onCreateAccountClick }) =>
   (<header>
     <div className={common.layoutWidthLimiter}>
