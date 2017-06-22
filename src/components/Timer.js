@@ -1,7 +1,6 @@
 import React from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
 
-
 import styles from './Timer.scss';
 
 // TODO: this is just placeholder it needs to be implemented correctly

@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { getTranslator } from '../reducers/translation';
 import HeaderProfileContext from '../components/HeaderProfileContext';
 import Footer from '../components/Footer';
 import ProcessIndicator from '../components/ProcessIndicator';
 import Timer from '../components/Timer';
-
-import { getTranslator } from '../reducers/translation';
-
 import nano from '../images/tutorial-NANO-4.png';
-
 import styles from './LoginNanoPage.scss';
 import common from '../styles/common.scss';
 
