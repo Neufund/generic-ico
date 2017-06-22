@@ -6,6 +6,7 @@ import Login2FA from '../components/Login2FA';
 import LoginWeb3 from '../components/LoginWeb3';
 import LoginNeuKey from '../components/LoginNeuKey';
 
+import { column } from './LoginPage.scss';
 import common from '../styles/common.scss';
 
 export default () =>
@@ -19,17 +20,17 @@ export default () =>
               <Grid fluid>
                 <Row>
                   <Col lg={4}>
-                    <div className={common.whiteArea}>
+                    <div className={`${common.whiteArea} ${column}`}>
                       <Login2FA />
                     </div>
                   </Col>
                   <Col lg={4}>
-                    <div className={common.whiteArea}>
+                    <div className={`${common.whiteArea} ${column}`}>
                       <LoginWeb3 />
                     </div>
                   </Col>
                   <Col lg={4}>
-                    <div className={common.whiteArea}>
+                    <div className={`${common.whiteArea} ${column}`}>
                       <LoginNeuKey />
                     </div>
                   </Col>
