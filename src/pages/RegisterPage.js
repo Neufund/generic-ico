@@ -3,7 +3,6 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import HeaderRegistration from '../components/HeaderRegistration';
 import Footer from '../components/Footer';
 
-
 import styles from './RegisterPage.scss';
 import common from '../styles/common.scss';
 
