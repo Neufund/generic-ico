@@ -1,8 +1,6 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
-$back-button-color: #e8efe0;
-
 .process-indicator {
   @extend %montserrat;
 }
@@ -13,7 +11,6 @@ $back-button-color: #e8efe0;
 }
 
 .back {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +19,7 @@ $back-button-color: #e8efe0;
     display: block;
     text-transform: uppercase;
     line-height: 1;
-    color: $back-button-color;
+    color: $very-light-green;
     font-size: .5rem;
   }
 }
