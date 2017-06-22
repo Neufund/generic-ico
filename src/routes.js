@@ -2,13 +2,13 @@ import React from 'react';
 import Layout from './views/Layout';
 import QuotedStartups from './views/QuotedStartups';
 import LoginNano from './views/LoginNano';
-import Register from './views/Register';
 import ConfirmEmail from './views/ConfirmEmail';
 import KYC from './views/KYC';
 import Test from './views/Test';
 import NotFound from './views/NotFound';
 
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 const page = View => () => <Layout><View /></Layout>;
 
@@ -18,7 +18,7 @@ const routes = {
   '/test': page(Test),
   '/login': LoginPage,
   '/login/nano': page(LoginNano),
-  '/register': page(Register),
+  '/register': RegisterPage,
   '/register/email/:confirmationId': page(ConfirmEmail),
   '/kyc': page(KYC),
   '/not-found': page(NotFound),
