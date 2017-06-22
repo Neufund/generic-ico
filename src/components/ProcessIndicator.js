@@ -7,6 +7,9 @@ import LinearProgress from 'material-ui/LinearProgress';
 import styles from './ProcessIndicator.scss';
 import common from '../styles/common.scss';
 
+// TODO: this component should be reviewed with Ola for approval.
+// For now its more of placeholder to continue most urgent work
+
 const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
   (<div className={styles.processIndicator}>
     <div className={common.layoutWidthLimiter}>
@@ -25,7 +28,7 @@ const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
             {stepNumber && stepsTotal &&
               <span className={styles.stepNumber}>(step {stepNumber} of {stepsTotal})</span>
             }
-            <span className={styles.stepDescription}> {stepName}</span>
+            <span className={styles.stepDescription}>{stepName}</span>
           </Col>
         </Row>
       </Grid>
@@ -38,13 +41,12 @@ const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
 ProcessIndicatorComponent.propTypes = {
   stepsTotal: PropTypes.number,
   stepNumber: PropTypes.number,
-  stepName: PropTypes.string,
+  stepName: PropTypes.string.isRequired,
 };
 
 ProcessIndicatorComponent.defaultProps = {
   stepsTotal: undefined,
   stepNumber: undefined,
-  stepName: undefined,
 };
 
 export default ProcessIndicatorComponent;

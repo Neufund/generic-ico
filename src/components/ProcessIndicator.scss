@@ -8,8 +8,8 @@ $back-button-color: #e8efe0;
 }
 
 .column {
-  height: 70px;
-  line-height: 70px;
+  height: 4.375rem;
+  line-height: 4.375rem;
 }
 
 .back {
@@ -42,15 +42,15 @@ $back-button-color: #e8efe0;
 }
 
 .step-number {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
   color: $grey;
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: 300;
 }
 
 .step-description {
   color: $very-dark-green;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
