@@ -2,25 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Buttons.scss';
 
-const buttonCreator = (type) => {
-  const Button = ({ onClick, children, tabIndex, ...props }) => (
+const buttonCreator = (style) => {
+  const Button = ({ onClick, children, tabIndex, type }) => (
     <button
-      className={type}
+      className={style}
       tabIndex={tabIndex}
-      {...props}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>);
 
   Button.propTypes = {
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
     children: PropTypes.node.isRequired,
-    tabIndex: PropTypes.number.isRequired,
+    tabIndex: PropTypes.number,
+    type: PropTypes.oneOf(['button', 'submit', 'reset']),
   };
 
   Button.defaultProps = {
     tabIndex: 0,
+    type: 'button',
+    onClick: () => {},
   };
   return Button;
 };
