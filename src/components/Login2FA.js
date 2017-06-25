@@ -1,24 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import { getTranslator } from '../reducers/translation';
 import { SquareButton } from '../components/Buttons';
-import { help } from '../pages/LoginPage.scss';
+import TextInput from '../components/TextInput';
+import { container, help } from '../pages/LoginPage.scss';
+import { field } from './Login2FA.scss';
 
-const Login2FAComponent = ({ i18n }) =>
-  (<div>
-    <h2>{i18n('Log in')}</h2>
-    <p>email</p>
-    <p>password</p>
-    <p>6 digits code</p>
-    <SquareButton>Log in</SquareButton>
-    <p className={help}>{i18n('Lost your account?')} <a>{i18n('Recover')}</a></p>
-  </div>);
+// Here it's impossible to use stylesheets. You can only pass inline styling to text input
+const hintStyle = {
+  fontFamily: "'Montserrat', sans-serif",
+  color: '#b3b7ba',
+  fontSize: '1rem',
+};
+
+const Login2FAComponent = ({ i18n, handleSubmit }) =>
+  (<form className={container} onSubmit={handleSubmit}>
+    <div>
+      <h2>Log in</h2>
+      <TextInput
+        name="email"
+        hintText={i18n('email')}
+        fullWidth
+        hintStyle={hintStyle}
+        className={field}
+      />
+      <TextInput
+        name="password"
+        hintText={i18n('password')}
+        fullWidth
+        type="password"
+        hintStyle={hintStyle}
+        className={field}
+      />
+      <TextInput
+        name="code"
+        hintText={i18n('6 digits code')}
+        fullWidth
+        hintStyle={hintStyle}
+        className={field}
+      />
+    </div>
+    <div>
+      <SquareButton>{i18n('Log in')}</SquareButton>
+      <p className={help}>{i18n('Lost your account?')} <a>{i18n('Recover')}</a></p>
+    </div>
+  </form>);
 
 Login2FAComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
+
+function handleSubmitFunc(values) {
+  console.log(JSON.stringify(values, null, 2));
+}
+
+const Login2FAForm = reduxForm({
+  form: 'simple',
+  onSubmit: handleSubmitFunc,
+})(Login2FAComponent);
 
 export default connect(
   state => ({ i18n: getTranslator(state) })
-)(Login2FAComponent);
+)(Login2FAForm);

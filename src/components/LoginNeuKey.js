@@ -5,17 +5,21 @@ import { routeTo } from 'redux-router-kit';
 import { getTranslator } from '../reducers/translation';
 import { BorderButton } from '../components/Buttons';
 import nano from '../images/tutorial-NANO-1.png';
-import { help } from '../pages/LoginPage.scss';
+import { container, help } from '../pages/LoginPage.scss';
 
 const LoginNeuKeyComponent = ({ i18n, onShowTutorialClick }) =>
-  (<div>
-    <h2>{i18n('Use NeuKey')}</h2>
-    <p>{i18n('Connect your NeuKey to the USB')}</p>
-    <img src={nano} alt="" />
-    <BorderButton onClick={onShowTutorialClick}>
-      {i18n('Show tutorial')}
-    </BorderButton>
-    <p className={help}>{i18n('Lost your NeuKey?')} <a>{i18n('Conntact support')}</a></p>
+  (<div className={container}>
+    <div>
+      <h2>{i18n('Use NeuKey')}</h2>
+      <p>{i18n('Connect your NeuKey to the USB')}</p>
+      <img src={nano} alt="" />
+    </div>
+    <div>
+      <BorderButton onClick={onShowTutorialClick}>
+        {i18n('Show tutorial')}
+      </BorderButton>
+      <p className={help}>{i18n('Lost your NeuKey?')} <a>{i18n('Contact support')}</a></p>
+    </div>
   </div>);
 
 LoginNeuKeyComponent.propTypes = {
