@@ -4,10 +4,28 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
-msgid "To do"
+msgid "publish"
 msgstr ""
 
-msgid "Settings"
+msgid "Click here to upload a file"
+msgstr ""
+
+msgid "Your file should not be bigger than 3 MB it can be .png .jpg"
+msgstr ""
+
+msgid "Fifth Force"
+msgstr ""
+
+msgid "Neufund Platform"
+msgstr ""
+
+msgid "Already registered?"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Create an account"
 msgstr ""
 
 msgid "Ethereum Node"
@@ -107,6 +125,15 @@ msgid "Balance"
 msgstr ""
 
 msgid "Transactions"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Your file should not be bigger than 3 MB it can be"
+msgstr ""
+
+msgid "To do"
 msgstr ""
 
 msgid "Gas Price: "
