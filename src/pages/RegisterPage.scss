@@ -1,0 +1,51 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.layout {
+  padding-top: 3.125rem;
+}
+
+.column-area {
+  @extend %montserrat;
+  margin-left: .9rem;
+  background-color: $white;
+  height: 100%;
+  font-size: .875rem;
+  font-weight: 300;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+    padding: 2rem;
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  p {
+    margin-top: .1rem;
+    padding: 2rem;
+    color: $very-dark-gray;
+  }
+
+  button {
+    margin-left: 7rem;
+    width: 18rem;
+    text-align: center;
+  }
+
+  .help {
+    color: $grey;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+  }
+}
