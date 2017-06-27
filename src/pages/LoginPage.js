@@ -6,31 +6,30 @@ import Login2FA from '../components/Login2FA';
 import LoginWeb3 from '../components/LoginWeb3';
 import LoginNeuKey from '../components/LoginNeuKey';
 
-import styles from './LoginPage.scss';
 import common from '../styles/common.scss';
 
 export default () =>
-  (<div className={common.appContainer}>
+  (<div className={common.layoutAppContainer}>
     <HeaderUnauthenticated />
-    <div className={common.contentArea}>
-      <div className={common.widthLimiter}>
+    <div className={`${common.layoutContentArea} ${common.gradientContentArea}`}>
+      <div className={common.layoutWidthLimiter}>
         <Grid fluid>
           <Row>
             <Col lgOffset={1} lg={10}>
               <Grid fluid>
                 <Row>
                   <Col lg={4}>
-                    <div className={styles.columnArea}>
+                    <div className={common.whiteArea}>
                       <Login2FA />
                     </div>
                   </Col>
                   <Col lg={4}>
-                    <div className={styles.columnArea}>
+                    <div className={common.whiteArea}>
                       <LoginWeb3 />
                     </div>
                   </Col>
                   <Col lg={4}>
-                    <div className={styles.columnArea}>
+                    <div className={common.whiteArea}>
                       <LoginNeuKey />
                     </div>
                   </Col>

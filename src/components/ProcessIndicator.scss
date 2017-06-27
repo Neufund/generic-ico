@@ -1,0 +1,61 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.process-indicator {
+  @extend %montserrat;
+}
+
+.column {
+  height: 4.375rem;
+  line-height: 4.375rem;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .caption {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $very-light-green;
+    font-size: .5rem;
+  }
+}
+
+.back-icon {
+  padding-bottom: 0 !important; // sass-lint:disable-line no-important
+}
+
+.back-icon-color {
+  color: $very-light-green !important; // sass-lint:disable-line no-important
+}
+
+.text {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    bottom: 29%;
+    left: 0;
+    border-right: .0625rem solid $grey;
+    width: .0625rem;
+    height: 42%;
+    content: '';
+  }
+}
+
+.step-number {
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+  color: $grey;
+  font-size: .875rem;
+  font-weight: 300;
+}
+
+.step-description {
+  color: $very-dark-green;
+  font-size: 1rem;
+  font-weight: 500;
+}

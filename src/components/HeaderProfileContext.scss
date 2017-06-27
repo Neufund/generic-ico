@@ -1,0 +1,14 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.header {
+  @extend %montserrat;
+  box-shadow: inset 0 -.1875rem .25rem .0625rem $grey-30-opacity;
+
+  // TODO: consult this with designer as outcome is different than in designs
+  background: $blue-gray-gradient;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: $dark-gray-blue;
+  font-size: .9375rem;
+}
