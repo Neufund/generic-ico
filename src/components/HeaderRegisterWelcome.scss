@@ -19,3 +19,7 @@
 .user {
   margin-left: 1.25rem;
 }
+
+.icon-style {
+  color: $white !important; // sass-lint:disable-line no-important
+}
