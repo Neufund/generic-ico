@@ -30,4 +30,10 @@ FieldText.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
+export const FieldEmail = ({ ...props }) => (<FieldText {...props} />);
+export const FieldPassword = ({ ...props }) => (<FieldText {...props} type={'password'} />);
+export const FieldCodeVarification = ({ ...props }) => (<FieldText {...props} />);
+export const FieldRecoveryCode = ({ ...props }) => (<FieldText {...props} />);
 export default FieldText;
+
+// TODO: Add validations for all costume fields
