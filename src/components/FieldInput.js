@@ -16,14 +16,14 @@ const mapError = ({
     }
     : { ...input, ...props });
 
-const RenderTextField = props =>
+const RenderFieldText = props =>
   <TextField {...mapError(props)} />;
 
 const FieldInput = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
-    component={RenderTextField}
+    component={RenderFieldText}
   />
   );
 FieldInput.propTypes = {
