@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { getTranslator } from '../reducers/translation';
 import { SquareButton } from '../components/Buttons';
-import TextInput from '../components/TextInput';
+import FieldText from '../components/FieldText';
 import { container, help } from '../pages/LoginPage.scss';
 import { field } from './Login2FA.scss';
 
@@ -19,14 +19,14 @@ const Login2FAComponent = ({ i18n, handleSubmit }) =>
   (<form className={container} onSubmit={handleSubmit}>
     <div>
       <h2>Log in</h2>
-      <TextInput
+      <FieldText
         name="email"
         hintText={i18n('email')}
         fullWidth
         hintStyle={hintStyle}
         className={field}
       />
-      <TextInput
+      <FieldText
         name="password"
         hintText={i18n('password')}
         fullWidth
@@ -34,7 +34,7 @@ const Login2FAComponent = ({ i18n, handleSubmit }) =>
         hintStyle={hintStyle}
         className={field}
       />
-      <TextInput
+      <FieldText
         name="code"
         hintText={i18n('6 digits code')}
         fullWidth
