@@ -19,15 +19,15 @@ const mapError = ({
 const RenderFieldText = props =>
   <TextField {...mapError(props)} />;
 
-const FieldInput = ({ name, ...props }) => (
+const FieldText = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
     component={RenderFieldText}
   />
   );
-FieldInput.propTypes = {
+FieldText.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default FieldInput;
+export default FieldText;
