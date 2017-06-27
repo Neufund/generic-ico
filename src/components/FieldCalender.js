@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { DatePicker } from 'redux-form-material-ui';
 import PropTypes from 'prop-types';
 
-const Calendar = ({ name, ...props }) => (
+const FieldCalender = ({ name, ...props }) => (
   <Field
     {...props}
     name={name}
@@ -11,10 +11,10 @@ const Calendar = ({ name, ...props }) => (
     component={DatePicker}
   />
   );
-Calendar.propTypes = {
+FieldCalender.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default Calendar;
+export default FieldCalender;
 
-// TODO: Lose material-ui
+// TODO: Change material UI
