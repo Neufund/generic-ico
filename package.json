@@ -26,7 +26,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
-    "ethereumjs-testrpc": "^3.0.5",
+    "ethereumjs-testrpc": "^4.0.0",
     "gettext-parser": "^1.2.2",
     "husky": "^0.14.0",
     "i18n-extract": "^0.4.2",
