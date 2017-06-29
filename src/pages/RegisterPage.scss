@@ -5,6 +5,10 @@
   padding-top: 3.125rem;
 }
 
+.textfield {
+  width: 100%;
+}
+
 .column-area {
   @extend %montserrat;
   margin-left: .9rem;
@@ -27,15 +31,22 @@
     font-weight: 300;
   }
 
+
   p {
     margin-top: .1rem;
     padding: 2rem;
     color: $very-dark-gray;
+
+    [Terms] {
+      width: 30%;
+   }
+
   }
 
   button {
+    margin-top: 2rem;
     margin-left: 7rem;
-    width: 18rem;
+    width: 55%;
     text-align: center;
   }
 
