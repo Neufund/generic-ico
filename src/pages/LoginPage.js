@@ -51,12 +51,12 @@ const LoginPageComponent = ({ onShowAllClick, showAllWaysToLogin }) =>
   </div>);
 
 LoginPageComponent.propTypes = {
-  showAll: PropTypes.bool,
+  showAllWaysToLogin: PropTypes.bool,
   onShowAllClick: PropTypes.func.isRequired,
 };
 
 LoginPageComponent.defaultProps = {
-  showAll: true,
+  showAllWaysToLogin: true,
 };
 
 
@@ -64,20 +64,23 @@ LoginPageComponent.defaultProps = {
 class LoginPageContainer extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       showAllWaysToLogin: !props.returningUser,
     };
+    this.onShowAllClick = this.onShowAllClick.bind(this);
   }
 
-  onShowAllClick = () => {
+  onShowAllClick() {
     this.setState({
       showAllWaysToLogin: true,
     });
-  };
+  }
 
   render() {
-    return <LoginPageComponent onShowAllClick={this.onShowAllClick} showAllWaysToLogin={this.state.showAllWaysToLogin} />;
+    return (<LoginPageComponent
+      onShowAllClick={this.onShowAllClick}
+      showAllWaysToLogin={this.state.showAllWaysToLogin}
+    />);
   }
 }
 
