@@ -15,7 +15,7 @@ const hintStyle = {
   fontSize: '1rem',
 };
 
-const Login2FAComponent = ({ i18n, handleSubmit, returningUser }) =>
+const Login2FAComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) =>
   (<form className={container} onSubmit={handleSubmit}>
     <div>
       <h2>Log in</h2>
@@ -46,8 +46,12 @@ const Login2FAComponent = ({ i18n, handleSubmit, returningUser }) =>
       <SquareButton>{i18n('Log in')}</SquareButton>
       <p className={help}>
         {i18n('Lost your account?')} <a>{i18n('Recover')}</a>
-        { returningUser &&
-        <span><br />{i18n('Not your login method?')} <a>{i18n('Show all')}</a></span>
+        { !hideShowAll &&
+        <span><br />{i18n('Not your login method?')} <a
+          tabIndex={0}
+          role="button"
+          onClick={onShowAllClick}
+        >{i18n('Show all')}</a></span>
         }
       </p>
     </div>
@@ -56,11 +60,12 @@ const Login2FAComponent = ({ i18n, handleSubmit, returningUser }) =>
 Login2FAComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  returningUser: PropTypes.bool,
+  onShowAllClick: PropTypes.func.isRequired,
+  hideShowAll: PropTypes.bool,
 };
 
 Login2FAComponent.defaultProps = {
-  returningUser: false,
+  hideShowAll: false,
 };
 
 function handleSubmitFunc(values) {

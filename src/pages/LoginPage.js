@@ -11,10 +11,7 @@ import LoginNeuKey from '../components/LoginNeuKey';
 import { column } from './LoginPage.scss';
 import common from '../styles/common.scss';
 
-// eslint-disable-next-line no-unused-vars
-const getReturningUser = state => true;
-
-const LoginPageComponent = ({ returningUser }) =>
+const LoginPageComponent = ({ onShowAllClick, showAllWaysToLogin }) =>
   (<div className={common.layoutAppContainer}>
     <HeaderUnauthenticated />
     <div className={`${common.layoutContentArea} ${common.gradientContentArea}`}>
@@ -26,17 +23,17 @@ const LoginPageComponent = ({ returningUser }) =>
                 <Row>
                   <Col lg={4}>
                     <div className={`${common.whiteArea} ${column}`}>
-                      <Login2FA returningUser={returningUser} />
+                      <Login2FA onShowAllClick={onShowAllClick} hideShowAll={showAllWaysToLogin} />
                     </div>
                   </Col>
-                  { !returningUser &&
+                  { showAllWaysToLogin &&
                   <Col lg={4}>
                     <div className={`${common.whiteArea} ${column}`}>
                       <LoginWeb3 />
                     </div>
                   </Col>
                   }
-                  { !returningUser &&
+                  { showAllWaysToLogin &&
                   <Col lg={4}>
                     <div className={`${common.whiteArea} ${column}`}>
                       <LoginNeuKey />
@@ -54,13 +51,47 @@ const LoginPageComponent = ({ returningUser }) =>
   </div>);
 
 LoginPageComponent.propTypes = {
-  returningUser: PropTypes.bool,
+  showAll: PropTypes.bool,
+  onShowAllClick: PropTypes.func.isRequired,
 };
 
 LoginPageComponent.defaultProps = {
+  showAll: true,
+};
+
+
+// eslint-disable-next-line react/prefer-stateless-function
+class LoginPageContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showAllWaysToLogin: !props.returningUser,
+    };
+  }
+
+  onShowAllClick = () => {
+    this.setState({
+      showAllWaysToLogin: true,
+    });
+  };
+
+  render() {
+    return <LoginPageComponent onShowAllClick={this.onShowAllClick} showAllWaysToLogin={this.state.showAllWaysToLogin} />;
+  }
+}
+
+LoginPageContainer.propTypes = {
+  returningUser: PropTypes.bool,
+};
+
+LoginPageContainer.defaultProps = {
   returningUser: false,
 };
 
+// eslint-disable-next-line no-unused-vars
+const getReturningUser = state => true;
+
 export default connect(
   state => ({ returningUser: getReturningUser(state) })
-)(LoginPageComponent);
+)(LoginPageContainer);
