@@ -5,13 +5,14 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import HeaderUnauthenticated from '../components/HeaderUnauthenticated';
 import Footer from '../components/Footer';
 import Login2FA from '../components/Login2FA';
+import LoginRecoveryCode from '../components/LoginRecoveryCode';
 import LoginWeb3 from '../components/LoginWeb3';
 import LoginNeuKey from '../components/LoginNeuKey';
 
 import { column } from './LoginPage.scss';
 import common from '../styles/common.scss';
 
-const LoginPageComponent = ({ onShowAllClick, showAllWaysToLogin }) =>
+const LoginPageComponent = ({ showRecoveryCode, onShowAllClick, showAllWaysToLogin }) =>
   (<div className={common.layoutAppContainer}>
     <HeaderUnauthenticated />
     <div className={`${common.layoutContentArea} ${common.gradientContentArea}`}>
@@ -23,7 +24,17 @@ const LoginPageComponent = ({ onShowAllClick, showAllWaysToLogin }) =>
                 <Row>
                   <Col lg={4}>
                     <div className={`${common.whiteArea} ${column}`}>
-                      <Login2FA onShowAllClick={onShowAllClick} hideShowAll={showAllWaysToLogin} />
+                      { showRecoveryCode ?
+                        <LoginRecoveryCode
+                          onShowAllClick={onShowAllClick}
+                          hideShowAll={showAllWaysToLogin}
+                        />
+                        :
+                        <Login2FA
+                          onShowAllClick={onShowAllClick}
+                          hideShowAll={showAllWaysToLogin}
+                        />
+                      }
                     </div>
                   </Col>
                   { showAllWaysToLogin &&
@@ -51,14 +62,15 @@ const LoginPageComponent = ({ onShowAllClick, showAllWaysToLogin }) =>
   </div>);
 
 LoginPageComponent.propTypes = {
+  showRecoveryCode: PropTypes.bool,
   showAllWaysToLogin: PropTypes.bool,
   onShowAllClick: PropTypes.func.isRequired,
 };
 
 LoginPageComponent.defaultProps = {
+  showRecoveryCode: true,
   showAllWaysToLogin: true,
 };
-
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LoginPageContainer extends React.Component {
