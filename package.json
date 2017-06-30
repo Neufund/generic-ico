@@ -14,7 +14,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
-    "chai-enzyme": "^0.7.0",
+    "chai-enzyme": "^0.8.0",
     "chai-http": "^3.0.0",
     "code-notes": "^1.0.1",
     "codecov": "^2.1.0",
