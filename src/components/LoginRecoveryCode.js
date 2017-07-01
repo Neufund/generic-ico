@@ -18,8 +18,8 @@ const hintStyle = {
 const LoginRecoveryCodeComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) =>
   (<form className={container} onSubmit={handleSubmit}>
     <div>
-      <h2>Log in</h2>
-      <p>Remember to store your recovery code in a secure place</p>
+      <h2>{i18n('Log in')}</h2>
+      <p>{i18n('Remember to store your recovery code in a secure place')}</p>
       <FieldText
         name="recoveryCode"
         hintText={i18n('Recovery code')}
@@ -54,13 +54,8 @@ LoginRecoveryCodeComponent.defaultProps = {
   hideShowAll: false,
 };
 
-function handleSubmitFunc(values) {
-  console.log(JSON.stringify(values, null, 2));
-}
-
 const LoginRecoveryCodeForm = reduxForm({
-  form: 'simple',
-  onSubmit: handleSubmitFunc,
+  form: 'LoginRecovery',
 })(LoginRecoveryCodeComponent);
 
 export default connect(

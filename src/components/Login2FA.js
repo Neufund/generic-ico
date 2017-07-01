@@ -68,13 +68,8 @@ Login2FAComponent.defaultProps = {
   hideShowAll: false,
 };
 
-function handleSubmitFunc(values) {
-  console.log(JSON.stringify(values, null, 2));
-}
-
 const Login2FAForm = reduxForm({
-  form: 'simple',
-  onSubmit: handleSubmitFunc,
+  form: 'Login2FA',
 })(Login2FAComponent);
 
 export default connect(

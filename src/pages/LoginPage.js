@@ -12,7 +12,8 @@ import LoginNeuKey from '../components/LoginNeuKey';
 import { column } from './LoginPage.scss';
 import common from '../styles/common.scss';
 
-const LoginPageComponent = ({ showRecoveryCode, onShowAllClick, showAllWaysToLogin }) =>
+const LoginPageComponent = ({ showRecoveryCode, showAllWaysToLogin, onShowAllClick, on2FASubmit,
+                              onRecoverySubmit }) =>
   (<div className={common.layoutAppContainer}>
     <HeaderUnauthenticated />
     <div className={`${common.layoutContentArea} ${common.gradientContentArea}`}>
@@ -26,11 +27,13 @@ const LoginPageComponent = ({ showRecoveryCode, onShowAllClick, showAllWaysToLog
                     <div className={`${common.whiteArea} ${column}`}>
                       { showRecoveryCode ?
                         <LoginRecoveryCode
+                          onSubmit={onRecoverySubmit}
                           onShowAllClick={onShowAllClick}
                           hideShowAll={showAllWaysToLogin}
                         />
                         :
                         <Login2FA
+                          onSubmit={on2FASubmit}
                           onShowAllClick={onShowAllClick}
                           hideShowAll={showAllWaysToLogin}
                         />
@@ -65,21 +68,30 @@ LoginPageComponent.propTypes = {
   showRecoveryCode: PropTypes.bool,
   showAllWaysToLogin: PropTypes.bool,
   onShowAllClick: PropTypes.func.isRequired,
+  on2FASubmit: PropTypes.func.isRequired,
+  onRecoverySubmit: PropTypes.func.isRequired,
 };
 
 LoginPageComponent.defaultProps = {
-  showRecoveryCode: true,
+  showRecoveryCode: false,
   showAllWaysToLogin: true,
 };
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LoginPageContainer extends React.Component {
+
+  static onRecoverySubmit(values) {
+    console.log(JSON.stringify(values, null, 2));
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       showAllWaysToLogin: !props.returningUser,
+      showRecoveryCode: false,
     };
     this.onShowAllClick = this.onShowAllClick.bind(this);
+    this.on2FASubmit = this.on2FASubmit.bind(this);
   }
 
   onShowAllClick() {
@@ -88,10 +100,20 @@ class LoginPageContainer extends React.Component {
     });
   }
 
+  on2FASubmit(values) {
+    console.log(JSON.stringify(values, null, 2));
+    this.setState({
+      showRecoveryCode: true,
+    });
+  }
+
   render() {
     return (<LoginPageComponent
-      onShowAllClick={this.onShowAllClick}
+      showRecoveryCode={this.state.showRecoveryCode}
       showAllWaysToLogin={this.state.showAllWaysToLogin}
+      onShowAllClick={this.onShowAllClick}
+      on2FASubmit={this.on2FASubmit}
+      onRecoverySubmit={LoginPageContainer.onRecoverySubmit}
     />);
   }
 }
