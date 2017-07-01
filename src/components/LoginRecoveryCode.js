@@ -29,7 +29,7 @@ const LoginRecoveryCodeComponent = ({ i18n, handleSubmit, hideShowAll, onShowAll
       />
     </div>
     <div>
-      <SquareButton>{i18n('Log in')}</SquareButton>
+      <SquareButton type="submit">{i18n('Log in')}</SquareButton>
       <p className={help}>
         {i18n('Lost your account?')} <a>{i18n('Recover')}</a>
         { !hideShowAll &&

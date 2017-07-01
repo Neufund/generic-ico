@@ -43,7 +43,7 @@ const Login2FAComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) 
       />
     </div>
     <div>
-      <SquareButton>{i18n('Log in')}</SquareButton>
+      <SquareButton type="submit" >{i18n('Log in')}</SquareButton>
       <p className={help}>
         {i18n('Lost your account?')} <a>{i18n('Recover')}</a>
         { !hideShowAll &&
