@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import LoginNanoPage from './pages/LoginNanoPage';
 import LoginNanoPage2 from './pages/LoginNanoPage2';
 import RegisterPage from './pages/RegisterPage';
+import RegisterWelcomePage from './pages/RegisterWelcomePage';
 
 const page = View => () => <Layout><View /></Layout>;
 
@@ -23,6 +24,8 @@ const routes = {
   '/login/nano/temp': LoginNanoPage2,
   '/register': RegisterPage,
   '/register/email/:confirmationId': page(ConfirmEmail),
+  // TODO: /register/welcome is temporary route
+  '/register/welcome': RegisterWelcomePage,
   '/kyc': page(KYC),
   '/not-found': page(NotFound),
 };
