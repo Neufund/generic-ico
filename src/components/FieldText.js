@@ -28,6 +28,9 @@ const Numeric = value =>
     ? 'Only numeric characters'
     : undefined;
 
+const minLength = min => value =>
+  value && value.length < min ? `Must be ${min} characters or more` : undefined;
+
 const RenderFieldText = props =>
   <TextField {...mapError(props)} />;
 
@@ -47,7 +50,7 @@ export const FieldEmail = ({ ...props }) =>
 export const FieldPassword = ({ ...props }) =>
     (<FieldText {...props} type={'password'} validate={[required]} />);
 export const FieldCodeVarification = ({ ...props }) =>
-    (<FieldText {...props} validate={[required, Numeric]} />);
+    (<FieldText {...props} validate={[required, Numeric, minLength(6)]} />);
 export const FieldRecoveryCode = ({ ...props }) =>
     (<FieldText {...props} validate={[required, Numeric]} />);
 export default FieldText;
