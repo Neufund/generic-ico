@@ -2,25 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
-
+import { getTranslator } from '../reducers/translation';
 import styles from './Timer.scss';
 
 // TODO: this is just placeholder it needs to be implemented correctly
-const TimerComponent = ({ secondsLeft }) =>
+const TimerComponent = ({ i18n, secondsLeft }) =>
   (secondsLeft >= 0 ?
     <div className={styles.timer}>
       <CircularProgress size={25} />
       <p className={styles.text}>
-        You have <span className={styles.countdown}>{secondsLeft} seconds</span> left
+        {i18n('You have')} <span className={styles.countdown}>{secondsLeft} {i18n('seconds')}</span> {i18n('left.')}
       </p>
     </div>
       :
-    <p>Time is up you should start from scratch</p>
+    <p>{i18n('Time is up you should start from scratch.')}</p>
   );
 
 TimerComponent.propTypes = {
+  i18n: PropTypes.func.isRequired,
   secondsLeft: PropTypes.number.isRequired,
 };
+
+const TimerComponentTranslated = connect(
+  state => ({ i18n: getTranslator(state) })
+  )(TimerComponent);
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Timer extends React.Component {
@@ -50,7 +55,7 @@ class Timer extends React.Component {
   }
 
   render() {
-    return <TimerComponent secondsLeft={this.state.seconds} />;
+    return <TimerComponentTranslated secondsLeft={this.state.seconds} />;
   }
 }
 
