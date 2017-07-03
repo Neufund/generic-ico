@@ -22,9 +22,18 @@ export const RegisterFormView = ({ handleSubmit }) =>
                 <div className={RegisterPageStyle.columnArea}>
                   <h2>Create your private account first</h2>
                   <form onSubmit={handleSubmit}>
-                    <TextField name={'firstname'} style={{ width: '75%', paddingLeft: '2rem' }} type={'text'} placeholder={'Choose your most reliable email address'} />
+                    <TextField
+                      name={'email'}
+                      style={{ marginRight: 'auto',
+                        marginLeft: 'auto',
+                        borderDown: '0.2rem',
+                        display: 'block',
+                        width: '70%' }}
+                      type={'text'}
+                      placeholder={'Choose your most reliable email address'}
+                    />
                     <SquareButton type={'submit'} > Get started </SquareButton>
-                    <p style={{ width: '65%', marginLeft: '6rem' }}> By clicking get started you agree to Neufunds
+                    <p> By clicking get started you agree to Neufunds
                         Platforms Terms of service and Privacy Policy</p>
                   </form>
                 </div>

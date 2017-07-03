@@ -1,62 +1,40 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
-.layout {
-  padding-top: 3.125rem;
-}
-
-.textfield {
-  width: 100%;
-}
-
 .column-area {
   @extend %montserrat;
-  margin-left: .9rem;
+  margin-bottom: 3rem;
   background-color: $white;
-  height: 100%;
   font-size: .875rem;
   font-weight: 300;
 
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-
   h2 {
-    margin-top: .1rem;
-    margin-bottom: .1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-left: 2rem;
     padding: 2rem;
     color: $black;
     font-size: 1.5rem;
     font-weight: 300;
   }
 
-
   p {
     margin-top: .1rem;
-    padding: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
     color: $very-dark-gray;
-
-    [Terms] {
-      width: 30%;
-   }
-
   }
 
   button {
-    margin-top: 2rem;
-    margin-left: 7rem;
-    width: 55%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1%;
+    width: 50%;
+    height: 50%;
     text-align: center;
   }
 
-  .help {
-    color: $grey;
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: 500;
-    }
-  }
 }
