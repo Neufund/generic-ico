@@ -25,8 +25,4 @@ $linkforeground: $very-dark-blue;
 $shadow-for-gradient-area: $almost-black;
 $shadow-for-white-column: $very-dark-blue;
 
-// sass-lint:disable no-color-literals
-$blue-gray-gradient: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
-// sass-lint:enable no-color-literals
-
-// TODO: decode how do we import variables by scss import or css-modules composes
+$blue-gray-gradient: linear-gradient(180deg, $dark-blue 0%, $dark-blue 2.36%, $very-dark-gray-blue 100%);
