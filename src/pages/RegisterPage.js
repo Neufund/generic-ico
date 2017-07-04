@@ -26,18 +26,15 @@ export const RegisterFormView = ({ handleSubmit, i18n }) =>
                   <form onSubmit={handleSubmit}>
                     <TextField
                       name={'email'}
-                      style={{
-                        marginLeft: '2rem',
-                        borderDown: '0.2rem',
-                        display: 'block',
-                        width: '70%' }}
+                      className={RegisterPageStyle.emailform}
+                      style={{ width: '70%' }}
                       type={'text'}
                       placeholder={i18n('Choose your most reliable email address')}
                     />
                     <SquareButton type={'submit'} > Get started </SquareButton>
                     <p> {i18n('By clicking get started you agree to Neufunds Platforms')}
                       <LoginLink>{i18n('Terms of service')}</LoginLink> {i18n('and')} <LoginLink>
-                        {i18n('Privacy Policy')}</LoginLink></p>
+                        {i18n('Privacy Policy')}</LoginLink> </p>
                   </form>
                 </div>
               </div>
@@ -68,3 +65,4 @@ RegisterPageInstance.propTypes = {
 export default connect(
   state => ({ i18n: getTranslator(state) })
 )(RegisterPageInstance);
+// TODO: Connect onSubmit with the General state

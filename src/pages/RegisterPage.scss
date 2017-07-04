@@ -1,6 +1,12 @@
 @import '../styles/colors';
 @import '../styles/fonts';
 
+.emailform {
+  display: block;
+  margin-left: 2rem;
+  border-bottom: .2rem;
+}
+
 .column-area {
   @extend %montserrat;
   margin-bottom: 3rem;
