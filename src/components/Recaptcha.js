@@ -18,5 +18,5 @@ Recaptcha.propTypes = {
 
 export default Recaptcha;
 
-//Before using ReCaptcha componenet, you must generate a sitekey trough accssessing
-//https://www.google.com/recaptcha/admin#list
+// Before using ReCaptcha componenet, you must generate a sitekey trough accssessing
+// https://www.google.com/recaptcha/admin#list
