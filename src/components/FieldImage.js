@@ -1,3 +1,4 @@
+/* global FileReader */
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import { Field } from 'redux-form';
@@ -6,7 +7,6 @@ import { connect } from 'react-redux';
 import { getTranslator } from '../reducers/translation';
 import styles from './FieldImage.scss';
 
-const fileInstance = new FileReader(); // eslint-disable-line no-undef
 const maxFilesize = 3000000;
 
 const DropzoneImage = ({ i18n, input }) => (
@@ -18,6 +18,7 @@ const DropzoneImage = ({ i18n, input }) => (
       className={styles.overide}
       name={input.name}
       onDropAccepted={(imageData) => {
+        const fileInstance = new FileReader();
         fileInstance.readAsDataURL(imageData[0]);
         fileInstance.onloadend = () => input.onChange(fileInstance.result);
       }}
