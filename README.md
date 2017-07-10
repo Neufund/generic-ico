@@ -41,6 +41,13 @@ Open the project folder in Atom. Then in a terminal, download all the dependenci
 yarn
 ```
 
+#### Possible `node-sass` issues
+
+For some node / npm versions there is slight problem with `node-sass`. You need to recompile it for your node version after issuing `yarn`. 
+```
+npm rebuild node-sass
+```
+
 Now open a terminal and start:
 
 ```
