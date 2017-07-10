@@ -1,8 +1,7 @@
-$shadow-color1: #bbc2c7;
-$shadow-color2: #eff49f;
+@import '../styles/colors';
 
 .note {
   border-radius: .5rem;
-  box-shadow: 0 .125rem .25rem 0 $shadow-color1, 0 .0625rem .625rem 0 $shadow-color2;
+  box-shadow: 0 .125rem .25rem 0 $grey-light, 0 .0625rem .625rem 0 $neufund-green-light;
   padding: 1.25rem;
 }
