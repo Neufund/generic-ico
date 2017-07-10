@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { note } from './NoteWhiteArea.scss';
+import { note } from './HelpContainer.scss';
 
-const NoteWhiteArea = ({ className, children, ...props }) =>
+const HelpContainer = ({ className, children, ...props }) =>
   (<div
     className={className !== undefined ? `${note} ${className}` : note}
     {...props}
@@ -10,13 +10,13 @@ const NoteWhiteArea = ({ className, children, ...props }) =>
     {children}
   </div>);
 
-NoteWhiteArea.propTypes = {
+HelpContainer.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
-NoteWhiteArea.defaultProps = {
+HelpContainer.defaultProps = {
   className: undefined,
 };
 
-export default NoteWhiteArea;
+export default HelpContainer;
