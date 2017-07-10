@@ -23,7 +23,7 @@ const email = value =>
     ? 'Invalid email address'
     : undefined;
 
-const Numeric = value =>
+const numeric = value =>
   value && /[^0-9 ]/i.test(value)
     ? 'Only numeric characters'
     : undefined;
@@ -49,10 +49,10 @@ export const FieldEmail = ({ ...props }) =>
     (<FieldText {...props} validate={[required, email]} />);
 export const FieldPassword = ({ ...props }) =>
     (<FieldText {...props} type={'password'} validate={[required]} />);
-export const FieldCodeVarification = ({ ...props }) =>
-    (<FieldText {...props} validate={[required, Numeric, minLength(6)]} />);
+export const FieldCodeVerification = ({ ...props }) =>
+    (<FieldText {...props} validate={[required, numeric, minLength(6)]} />);
 export const FieldRecoveryCode = ({ ...props }) =>
-    (<FieldText {...props} validate={[required, Numeric]} />);
+    (<FieldText {...props} validate={[required, numeric]} />);
 export default FieldText;
 
 // TODO: Add validations for all costume fields
