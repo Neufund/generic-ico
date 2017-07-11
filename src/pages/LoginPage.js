@@ -8,6 +8,7 @@ import Login2FA from '../components/Login2FA';
 import LoginRecoveryCode from '../components/LoginRecoveryCode';
 import LoginWeb3 from '../components/LoginWeb3';
 import LoginNeuKey from '../components/LoginNeuKey';
+import { do2FASubmit, doRecoveryCodeSubmit, setPreferredLoginMethod } from '../reducers/authenticate';
 
 import { column } from './LoginPage.scss';
 import common from '../styles/common.scss';
@@ -77,58 +78,14 @@ LoginPageComponent.defaultProps = {
   showAllWaysToLogin: true,
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
-class LoginPageContainer extends React.Component {
-
-  static onRecoverySubmit(values) {
-    console.log(JSON.stringify(values, null, 2));
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      showAllWaysToLogin: !props.returningUser,
-      showRecoveryCode: false,
-    };
-    this.onShowAllClick = this.onShowAllClick.bind(this);
-    this.on2FASubmit = this.on2FASubmit.bind(this);
-  }
-
-  onShowAllClick() {
-    this.setState({
-      showAllWaysToLogin: true,
-    });
-  }
-
-  on2FASubmit(values) {
-    console.log(JSON.stringify(values, null, 2));
-    this.setState({
-      showRecoveryCode: true,
-    });
-  }
-
-  render() {
-    return (<LoginPageComponent
-      showRecoveryCode={this.state.showRecoveryCode}
-      showAllWaysToLogin={this.state.showAllWaysToLogin}
-      onShowAllClick={this.onShowAllClick}
-      on2FASubmit={this.on2FASubmit}
-      onRecoverySubmit={LoginPageContainer.onRecoverySubmit}
-    />);
-  }
-}
-
-LoginPageContainer.propTypes = {
-  returningUser: PropTypes.bool,
-};
-
-LoginPageContainer.defaultProps = {
-  returningUser: false,
-};
-
-// eslint-disable-next-line no-unused-vars
-const getReturningUser = state => true;
-
 export default connect(
-  state => ({ returningUser: getReturningUser(state) })
-)(LoginPageContainer);
+  state => ({
+    showRecoveryCode: state.authenticate.currentLoginMethodStep === 'RecoveryCode',
+    showAllWaysToLogin: state.authenticate.preferredLoginMethod !== '2FA',
+  }),
+  dispatch => ({
+    onShowAllClick: () => dispatch(setPreferredLoginMethod(null)),
+    on2FASubmit: formFields => dispatch(do2FASubmit(formFields)),
+    onRecoverySubmit: formFields => dispatch(doRecoveryCodeSubmit(formFields)),
+  })
+)(LoginPageComponent);
