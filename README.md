@@ -70,25 +70,3 @@ openssl ecparam -genkey -name secp521r1 -noout -out ec512.prv.pem
 openssl ec -in ec512.prv.pem -pubout > ec512.pub.pem
 docker run -ti -v $(pwd)/ec512.prv.pem:/srv/ec512.prv.pem:ro -v $(pwd)/ec512.pub.pem:/srv/ec512.pub.pem:ro -p 5000:5000 neufund/signature-authentication-server:latest
 ```
-
-
-### Using starter kit as starting point for new projects
-You need to create branch that tracks this repository and rebase it on your master. Then when there will be newer versions of starter kit (new features, bugfixes etc) you can pull those using starter branch and merge to your project.
-
-Lets assume you created ```new_project``` use the following commands to setup it:
-
-    git clone git@github.com:Neufund/new_project.git
-    cd new_project
-    git commit --allow-empty -m "Initial commit"
-    git remote add dapp-starter-kit git@github.com:Neufund/dapp-starter-kit.git
-    git fetch dapp-starter-kit
-    git branch starter
-    git branch --set-upstream-to=dapp-starter-kit/master starter
-    git checkout starter
-    git pull -r
-    git checkout master
-
-Ignore the message "Your branch is based on 'origin/master', but the upstream is gone." - it's beacuse your master is empty thanks to usage of "--allow-empty" parameter
-
-    git rebase starter
-    git push
