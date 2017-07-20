@@ -72,7 +72,7 @@
     "redux-router-kit": "^0.0.49",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.0",
-    "web3": "^0.20.1",
+    "web3": "^1.0.0-beta1",
     "web3-provider-engine": "^13.0.1"
   },
   "scripts": {
