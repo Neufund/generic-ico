@@ -10,7 +10,7 @@ const FieldCalender = ({ name, ...props }) => (
     format={null}
     component={DatePicker}
   />
-  );
+);
 FieldCalender.propTypes = {
   name: PropTypes.string.isRequired,
 };

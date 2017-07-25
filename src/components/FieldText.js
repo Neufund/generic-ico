@@ -4,10 +4,10 @@ import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 
 const mapError = ({
-    meta: { touched, error, warning } = {},
-    input,
-    ...props
-  }) =>
+  meta: { touched, error, warning } = {},
+  input,
+  ...props
+}) =>
   (touched && (error || warning)
     ? {
       ...props,
@@ -25,7 +25,7 @@ const FieldText = ({ name, ...props }) => (
     name={name}
     component={RenderFieldText}
   />
-  );
+);
 FieldText.propTypes = {
   name: PropTypes.string.isRequired,
 };

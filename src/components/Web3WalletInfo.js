@@ -23,7 +23,7 @@ const Web3WalletInfoComponent = ({ i18n, wallet }) =>
             <td>{<EtherAmount wei={balance} /> || i18n('unavailable')}</td>
             <td>{transactions === null ? i18n('unavailable') : transactions}</td>
           </tr>
-          ))}
+        ))}
       </tbody>
     </table>;
 
