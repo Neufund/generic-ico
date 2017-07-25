@@ -4,10 +4,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
-msgid "To do"
+msgid "Fifth Force"
 msgstr ""
 
-msgid "Settings"
+msgid "Neufund Platform"
+msgstr ""
+
+msgid "Already registered?"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Create an account"
 msgstr ""
 
 msgid "Ethereum Node"
@@ -107,6 +116,72 @@ msgid "Balance"
 msgstr ""
 
 msgid "Transactions"
+msgstr ""
+
+msgid "Logging in with NeuKey"
+msgstr ""
+
+msgid "Step 1"
+msgstr ""
+
+msgid ""
+"To authenticate with the Ledger Nano connect the hardware into USB and "
+"prepare your PIN code for the device"
+msgstr ""
+
+msgid "Step 2"
+msgstr ""
+
+msgid ""
+"Enter PIN code – use left and right key enter numbers and press two keys at "
+"the same time to confirm"
+msgstr ""
+
+msgid "Step 3"
+msgstr ""
+
+msgid ""
+"Pick the Ethereum app – after placing the Ethereum icon in the middle of "
+"the Nano Screen press two keys at the same time to confirm"
+msgstr ""
+
+msgid "Your NeuKey doesn’t work, you lost it or something something?"
+msgstr ""
+
+msgid "Contact support"
+msgstr ""
+
+msgid "Sign in logging in"
+msgstr ""
+
+msgid "Step 4"
+msgstr ""
+
+msgid "Confirm logging in by pressing right key on the Ledger "
+msgstr ""
+
+msgid "Create your private account first"
+msgstr ""
+
+msgid "Choose your most reliable email address"
+msgstr ""
+
+msgid "By clicking get started you agree to Neufunds Platforms"
+msgstr ""
+
+msgid "Terms of service"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "To do"
 msgstr ""
 
 msgid "Gas Price: "

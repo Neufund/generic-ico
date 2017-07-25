@@ -1,0 +1,50 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.emailform {
+  display: block;
+  margin-left: 2rem;
+  border-bottom: .2rem;
+}
+
+.column-area {
+  @extend %montserrat;
+  margin-bottom: 3rem;
+  background-color: $white;
+  font-size: .875rem;
+  font-weight: 300;
+
+  h2 {
+    margin-top: auto;
+    margin-bottom: auto;
+    border-left: 2rem;
+    padding: 2rem;
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  p {
+    margin-top: .1rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    color: $very-dark-gray;
+  }
+
+  a {
+    font-weight: 400;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+  }
+
+}
