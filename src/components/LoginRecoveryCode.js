@@ -15,35 +15,21 @@ const hintStyle = {
   fontSize: '1rem',
 };
 
-const Login2FAComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) =>
+const LoginRecoveryCodeComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) =>
   (<form className={container} onSubmit={handleSubmit}>
     <div>
-      <h2>Log in</h2>
+      <h2>{i18n('Log in')}</h2>
+      <p>{i18n('Remember to store your recovery code in a secure place')}</p>
       <FieldText
-        name="email"
-        hintText={i18n('email')}
-        fullWidth
-        hintStyle={hintStyle}
-        className={field}
-      />
-      <FieldText
-        name="password"
-        hintText={i18n('password')}
-        fullWidth
-        type="password"
-        hintStyle={hintStyle}
-        className={field}
-      />
-      <FieldText
-        name="code"
-        hintText={i18n('6 digits code')}
+        name="recoveryCode"
+        hintText={i18n('Recovery code')}
         fullWidth
         hintStyle={hintStyle}
         className={field}
       />
     </div>
     <div>
-      <SquareButton type="submit" >{i18n('Log in')}</SquareButton>
+      <SquareButton type="submit">{i18n('Log in')}</SquareButton>
       <p className={help}>
         {i18n('Lost your account?')} <a>{i18n('Recover')}</a>
         { !hideShowAll &&
@@ -57,21 +43,21 @@ const Login2FAComponent = ({ i18n, handleSubmit, hideShowAll, onShowAllClick }) 
     </div>
   </form>);
 
-Login2FAComponent.propTypes = {
+LoginRecoveryCodeComponent.propTypes = {
   i18n: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   onShowAllClick: PropTypes.func.isRequired,
   hideShowAll: PropTypes.bool,
 };
 
-Login2FAComponent.defaultProps = {
+LoginRecoveryCodeComponent.defaultProps = {
   hideShowAll: false,
 };
 
-const Login2FAForm = reduxForm({
-  form: 'Login2FA',
-})(Login2FAComponent);
+const LoginRecoveryCodeForm = reduxForm({
+  form: 'LoginRecovery',
+})(LoginRecoveryCodeComponent);
 
 export default connect(
   state => ({ i18n: getTranslator(state) })
-)(Login2FAForm);
+)(LoginRecoveryCodeForm);

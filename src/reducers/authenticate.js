@@ -9,6 +9,8 @@ import { fetchJson } from '../utils';
 const initialState = {
   url: '/signature-authentication-server/api',
   token: null,
+  preferredLoginMethod: null,
+  currentLoginMethodStep: null,
 };
 
 const reducers = {
@@ -16,11 +18,19 @@ const reducers = {
     ...state,
     token,
   }),
+  setPreferredLoginMethod: (state, preferredLoginMethod) => ({
+    ...state,
+    preferredLoginMethod,
+  }),
+  setCurrentLoginMethodStep: (state, currentLoginMethodStep) => ({
+    ...state,
+    currentLoginMethodStep,
+  }),
 };
 
 export const reducer = makeReducer(reducers, initialState);
 export const creators = makeCreators(reducers);
-export const { setToken } = creators;
+export const { setToken, setPreferredLoginMethod, setCurrentLoginMethodStep } = creators;
 export default reducer;
 
 export const getJwtPayload = createSelector([state => state.authenticate.token], jwtDecode);
@@ -81,4 +91,19 @@ export const doAuthenticate = uaddress => async (dispatch, getState) => {
   setTimeout(async () => {
     dispatch(doRenew());
   }, renewSeconds * 1000);
+};
+
+// Its placeholder for real implementation
+export const do2FASubmit = formFields => (dispatch) => {
+  // eslint-disable-next-line no-console
+  console.log(formFields);
+  dispatch(setCurrentLoginMethodStep('RecoveryCode'));
+  dispatch(setPreferredLoginMethod('2FA'));
+};
+
+// Its placeholder for real implementation.
+export const doRecoveryCodeSubmit = formFields => (dispatch) => {
+  // eslint-disable-next-line no-console
+  console.log(formFields);
+  dispatch(setCurrentLoginMethodStep(null));
 };

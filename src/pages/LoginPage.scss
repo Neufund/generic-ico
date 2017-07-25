@@ -1,0 +1,55 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.column {
+  @extend %montserrat;
+
+  h2 {
+    font-size: 1.375rem;
+    font-weight: 300;
+  }
+
+  p {
+    color: $very-dark-gray;
+    font-size: .875rem;
+    font-weight: 300;
+  }
+
+  img {
+    display: block;
+    margin: 2.125rem auto;
+  }
+
+  button {
+    margin-top: 1.375rem;
+    margin-bottom: 1.375rem;
+    width: 100%;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    color: $very-dark-gray;
+    font-size: .875rem;
+    font-weight: 500;
+
+    li {
+      line-height: 1.6;
+    }
+  }
+
+  .help {
+    color: $grey;
+
+    a {
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
