@@ -14,7 +14,7 @@ const TimerComponent = ({ i18n, secondsLeft }) =>
         {i18n('You have')} <span className={styles.countdown}>{secondsLeft} {i18n('seconds')}</span> {i18n('left.')}
       </p>
     </div>
-      :
+    :
     <p>{i18n('Time is up you should start from scratch.')}</p>
   );
 
@@ -25,7 +25,7 @@ TimerComponent.propTypes = {
 
 const TimerComponentTranslated = connect(
   state => ({ i18n: getTranslator(state) })
-  )(TimerComponent);
+)(TimerComponent);
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Timer extends React.Component {
