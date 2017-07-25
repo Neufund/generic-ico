@@ -16,7 +16,7 @@ const ProcessIndicatorComponent = ({ stepsTotal, stepNumber, stepName }) =>
       <Grid fluid>
         <Row>
           <Col lg={1} className={`${styles.column} ${styles.back}`}>
-            {/* TODO: consult with designer exact sizes and positions of back arrow*/}
+            {/* TODO: consult with designer exact sizes and positions of back arrow */}
             <IconButton
               iconClassName={`material-icons ${styles.backIconColor}`}
               className={styles.backIcon}
