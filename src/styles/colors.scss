@@ -5,6 +5,7 @@ $gray-light-blue: #a3c0cc;
 $light-gray-blue: #d9dbdc;
 $grey-30-opacity: rgba(35, 39, 44, .3);
 $grey: #8e9297;
+$grey-light: #bbc2c7;
 $very-light-green: #e8efe0;
 $very-dark-green: #032533;
 $very-dark-blue: #315568;
@@ -14,6 +15,7 @@ $almost-black: #262b2f;
 $white: #fff;
 $black: #000;
 $neufund-green: #d5e20f;
+$neufund-green-light: #eff49f;
 
 $altbackground: $dark-blue;
 $altforeground: $dark-blue;
@@ -25,8 +27,4 @@ $linkforeground: $very-dark-blue;
 $shadow-for-gradient-area: $almost-black;
 $shadow-for-white-column: $very-dark-blue;
 
-// sass-lint:disable no-color-literals
-$blue-gray-gradient: linear-gradient(180deg, #09719b 0%, #09719b 2.36%, #424a52 100%);
-// sass-lint:enable no-color-literals
-
-// TODO: decode how do we import variables by scss import or css-modules composes
+$blue-gray-gradient: linear-gradient(180deg, $dark-blue 0%, $dark-blue 2.36%, $very-dark-gray-blue 100%);

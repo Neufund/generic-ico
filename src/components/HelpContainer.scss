@@ -1,0 +1,7 @@
+@import '../styles/colors';
+
+.note {
+  border-radius: .5rem;
+  box-shadow: 0 .125rem .25rem 0 $grey-light, 0 .0625rem .625rem 0 $neufund-green-light;
+  padding: 1.25rem;
+}
